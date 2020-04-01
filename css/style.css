@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 header {
     box-shadow: 0 1px 5px 0 #c6c8ca;
     margin-bottom: 20px;
@@ -82,10 +86,51 @@ header {
     color: #1d2124;
 }
 
-.translation-link {
-    text-decoration: none !important;
-}
-
 .translation-link:hover {
     color: #00B4CC;
+}
+
+.group-name {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.pipe {
+    margin: 0 5px;
+    color: #ccc ;
+}
+
+.book {
+    display: flex;
+    background: #34b1a7;
+    padding: 10px;
+    width: 210px;
+    margin: 2px;
+}
+
+.book-name, .book-abbr {
+    color: #fafafa;
+    font-size: 20px;
+}
+
+.book-abbr {
+    display: none;
+}
+
+.chapters-count {
+    background: rgba(230,230,230,0.5);
+}
+
+@media(max-width: 992px) {
+    .book {
+        width: 70px;
+    }
+
+    .book-name {
+        display: none;
+    }
+
+    .book-abbr {
+        display: block;
+    }
 }
