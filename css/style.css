@@ -128,9 +128,13 @@ header {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #006ecc;
+    background-color: #34B1A7;
     color: #ffffff;
     padding: 7px;
+}
+.button_top:hover{
+    background-color: #F9AF02;
+    transition: 0.2s;
 }
 
 .translation-title-wrap {
