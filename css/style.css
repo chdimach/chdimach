@@ -122,6 +122,10 @@ header {
     display: none;
 }
 
+.container{
+    position: fixed;
+}
+
 .button_top{
     width: 30px;
     height: 30px;
@@ -136,10 +140,18 @@ header {
     background-color: #F9AF02;
     transition: 0.2s;
 }
+.button_nav_˂˃_1  {
+color:#ffffff;
+background:#34B1A7;
+border:1px solid #ccc;
+border-radius:3px;
+padding:  0px 16px;
+box-shadow:1px 1px 1px #E7EAED;
+}
 
 .translation-title-wrap {
-    padding: 10px 0;
-}
+}    padding: 10px 0;
+
 
 .translation-title-wrap .translation-title {
     font-size: 24px;
