@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>read </title>
-    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
-        <div class="search-wrap">
-            <div class="search-group">
-                <input type="text" class="search-input" placeholder="Поиск">
-                <button type="submit" class="search-button">
-                    <img src="icons/search-icon.svg" alt="">
-                </button>
-            </div>
-        </div>
-    </div>
-</header>
+<?php
+include('function.php');
+include('database.php');
+include ('header.php');
+
+?>
+
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -110,31 +92,16 @@
                     </div>
                 </aside>
             </div>
+            <?php
+            $cont =$_GET['chapter'];
+            $content = get_content($cont);
+            ?>
+            <?php foreach ($content as $cont):?>
             <div class="bible-text col-11 col-lg-8">
-                <div id="1">
-                    <sup>1</sup> Аллилуия. Хвалите Бога во святыне Его, хвалите Его на тверди силы Его.</div>
-                <div id="2">
-                    <sup>2</sup> Хвалите Его по могуществу Его, хвалите Его по множеству величия Его.</div>
-                <div id="3">
-                    <sup>3</sup> Хвалите Его со звуком трубным, хвалите Его на псалтири и гуслях.</div>
-                <div id="4">
-                    <sup>4</sup> Хвалите Его с тимпаном и ликами, хвалите Его на струнах и органе.</div>
-                <div id="5">
-                    <sup>5</sup> Хвалите Его на звучных кимвалах, хвалите Его на кимвалах громогласных.</div>
-                <div id="6">
-                    <sup>6</sup> Все дышащее да хвалит Господа! Аллилуия.</div>
-                <div>. Номера стихов – это ссылки, ведущие на раздел со сравнением переводов, параллельными ссылками, текстами с номерами Стронга. Попробуйте,
-                    возможно вы будете приятно удивлены.</div>
+                <?=$cont['content'] ?>
             </div>
+            <?php endforeach;  ?>
         </div>
     </div>
 </main>
-<a href="#">
-    <svg class="button_top " width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
-    </svg>
-</a>
-    <script src="js/libs/jquery-3.4.1.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php include ('footer.php')?>
