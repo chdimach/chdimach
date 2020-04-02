@@ -54,6 +54,15 @@ header {
     border: none;
     cursor: pointer;
     font-size: 20px;
+    transition: all .3s ease;
+}
+
+.search-button:hover svg {
+    transition: all .3s ease;
+}
+
+.search-button:hover svg {
+    fill: #1d2124;
 }
 
 .translations-wrap {
@@ -75,6 +84,7 @@ header {
 
 .translation-item {
     padding: 10px;
+    transition: all .3s ease;
 }
 
 .translation-item:hover {
@@ -111,6 +121,7 @@ header {
     width: 210px;
     margin: 2px;
     color: #fafafa;
+    transition: all .3s ease;
 }
 
 .book:hover {
@@ -160,6 +171,7 @@ header {
     display: block;
     color: #34b1a7;
     text-align: center;
+    transition: all .3s ease;
 }
 
 .chapter:hover {
@@ -192,7 +204,6 @@ header {
 
 .translation-select-wrap {
     margin: 0 auto;
-    /*position: absolute;*/
     width: 100%;
 }
 
@@ -212,6 +223,15 @@ header {
     border-radius:3px;
     padding:  0 15px;
     box-shadow:1px 1px 1px #E7EAED;
+    transition: all .3s ease;
+}
+
+.arrow-back:hover, .arrow-next:hover {
+    background: rgba(56,205,195,0.1);
+}
+
+.arrow-back:hover svg, .arrow-next:hover svg {
+    fill:#34b1a7;
 }
 
 .arrow-back {
