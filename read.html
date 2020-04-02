@@ -2,31 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>read </title>
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="container-fluid"> <!--container 100 % -->
-    <nav class="row">
-
-        <div class="col-lg-2 col-sm-4 header text-center">
-            <a class="back_books_nazad" href="read_2.html"> ˂ </a>
-            Бытие 1
+<header>
+    <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <div class="search-wrap">
+            <div class="search-group">
+                <input type="text" class="search-input" placeholder="Поиск">
+                <button type="submit" class="search-button">
+                    <img src="icons/search-icon.svg" alt="">
+                </button>
+            </div>
         </div>
-        <div class="col-lg-2 col-sm-4 header text-center">
-         Перевод ˅
-
-         </div>
-         <div class="col-lg-2 col-sm-4 offset-lg-6 header text-center">
-             <a class="button_nav_˂˃_1" href="read_3.html"> ˂ </a> &#160;
-             <a class="button_nav_˂˃_1" href="read_4.html"> ˃ </a>
-          </div>
-    </nav>
+    </div>
 </header>
-<div class="row-col-lg-1 offset-lg-2 col-sm-4 ">
-    Бытие
-    1..2.
+<div class="bible-nav">
+    <div class="translation-select-wrap d-flex align-items-center justify-content-center">
+        <div class="current-translation">Синодальный перевод</div>
+        <svg width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847">
+            <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                        c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                        c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+        </svg>
+    </div>
 </div>
+<div class="bible-nav">
+    <div class="container d-flex justify-content-between">
+        <div class="d-flex">
+            <a href="index.html" class="back-to-books d-flex align-items-center">
+                <svg fill="#34b1a7" height="16px" width="16px" viewBox="0 0 477.175 477.175">
+                    <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+            c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
+                </svg>
+                <span class="current-book">Бытие</span>
+            </a>
+            <div class="chapter-select-wrap d-flex align-items-center">
+                <div class="current-chapter">1</div>
+                <svg width="16px" height="16px" viewBox="0 0 451.847 451.847">
+                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                        c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                        c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="arrows-wrap d-flex">
+                <a href="#" class="arrow-back">
+                    <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
+                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                    </svg>
+                </a>
+                <a href="#" class="arrow-next">
+                    <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847">
+                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<main>
+    <div class="container-fluid">
+        <div class="bible-text">
+            <div id="1"><sup>1</sup>В начале сотворил Бог небо и землю.</div>
+            <div id="2"><sup>2</sup>Земля же была безвидна и пуста, и тьма над бездною, и Дух Божий носился над водою.</div>
+        </div>
+    </div>
+</main>
+<a href="#">
+    <svg class="button_top " width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
+    </svg>
+</a>
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -8,7 +8,6 @@ a {
 
 header {
     box-shadow: 0 1px 5px 0 #c6c8ca;
-    margin-bottom: 20px;
 }
 
 .logo img{
@@ -121,10 +120,6 @@ header {
     display: none;
 }
 
-.container{
-    position: fixed;
-}
-
 .button_top{
     width: 30px;
     height: 30px;
@@ -135,22 +130,15 @@ header {
     color: #ffffff;
     padding: 7px;
 }
+
 .button_top:hover{
     background-color: #F9AF02;
     transition: 0.2s;
 }
-.button_nav_˂˃_1  {
-color:#ffffff;
-background:#34B1A7;
-border:1px solid #ccc;
-border-radius:3px;
-padding:  0px 16px;
-box-shadow:1px 1px 1px #E7EAED;
-}
 
 .translation-title-wrap {
-}    padding: 10px 0;
-
+    padding: 10px 0;
+}
 
 .translation-title-wrap .translation-title {
     font-size: 24px;
@@ -172,6 +160,58 @@ box-shadow:1px 1px 1px #E7EAED;
     color: #fafafa;
 }
 
+.bible-nav {
+    background: #f2f1ef;
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.bible-nav .current-book {
+    margin-bottom: 1px;
+    color: #34b1a7;
+}
+
+.chapter-select-wrap {
+    margin-left: 10px;
+}
+
+.current-chapter {
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.translation-select-wrap {
+    margin-left: 20px;
+}
+
+.current-translation {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.arrow-back, .arrow-next  {
+    color:#ffffff;
+    background:#34B1A7;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding:  0 15px;
+    box-shadow:1px 1px 1px #E7EAED;
+}
+
+.arrow-back {
+    margin-right: 10px;
+}
+
+.bible-text {
+    margin-top: 10px;
+}
+
+.bible-text sup {
+    top: -1px;
+    margin-right: 2px;
+    color: gray;
+}
 
 @media(max-width: 992px) {
     .book {
