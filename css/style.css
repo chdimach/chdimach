@@ -213,6 +213,10 @@ header {
     color: gray;
 }
 
+.bible-text div:last-child {
+    display: none;
+}
+
 @media(max-width: 992px) {
     .book {
         width: 70px;
