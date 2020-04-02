@@ -22,6 +22,14 @@ function get_books(){
     $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $books;
 }
+function get_book_name($number){
+    global $link;
+    mysqli_query($link,'set character_set_results ="utf8"');
+    $sql="SELECT * FROM bible_books WHERE book_number='$number'";
+    $result = mysqli_query($link, $sql);
+    $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $books;
+}
 function get_translations(){
     global $link;
     mysqli_query($link,'set character_set_results ="utf8"');

@@ -2,9 +2,12 @@
 include('function.php');
 include('database.php');
 include ('header.php');
-
 ?>
-
+<?php
+$cont =$_GET['chapter'];
+$content = get_content($cont);
+$book_name = get_book_name($content[0]['number_books']);
+?>
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -21,8 +24,11 @@ include ('header.php');
     <div class="container d-flex justify-content-between">
         <div class="d-flex">
             <div class="chapter-select-wrap d-flex align-items-center">
-                <div class="current-book mr-2">Бытие</div>
-                <div class="current-chapter"><span>Глава </span><span class="chapter-number">1</span></div>
+                    <div class="current-book mr-2">
+                        <?=$book_name[0]['name'] ?>
+                    </div>
+
+                <div class="current-chapter"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
                 <svg width="16px" height="16px" viewBox="0 0 451.847 451.847">
                     <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -91,15 +97,9 @@ include ('header.php');
                     </div>
                 </aside>
             </div>
-            <?php
-            $cont =$_GET['chapter'];
-            $content = get_content($cont);
-            ?>
-            <?php foreach ($content as $cont):?>
             <div class="bible-text col-11 col-lg-8">
-                <?=$cont['content'] ?>
+                <?=$content[0]['content'] ?>
             </div>
-            <?php endforeach;  ?>
         </div>
     </div>
 </main>
