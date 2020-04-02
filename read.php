@@ -83,14 +83,26 @@ $book_name = get_book_name($content[0]['number_books']);
                             </div>
                             <div class="bible-books-new d-none">
                                 <div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                    <div class="bible-book">Матфея</div>
-                                    <div class="bible-book">Марка</div>
+                                    <?php
+                                    $books = get_books();
+                                    $transl='syn';
+                                    ?>
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']>=40){
+                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
+                    ';
+                                        }?>
+                                    <?php endforeach;  ?>
                                 </div>
                             </div>
                             <div class="bible-books-old">
                                 <div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                    <div class="bible-book current">Бытие</div>
-                                    <div class="bible-book">Исход</div>
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']<40){
+                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
+                    ';
+                                        }?>
+                                    <?php endforeach;  ?>
                                 </div>
                             </div>
                         </div>
