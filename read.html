@@ -90,21 +90,20 @@
                     <div class="bible-side d-none d-lg-block">
                         <div class="bible-side-wrap">
                             <div class="bible-side-tabs-wrap d-flex">
-                                <div class="bible-side-tab">Новый завет</div>
-                                <div class="bible-side-tab current">Ветхий завет</div>
+                                <div class="bible-side-tab bible-side-tab-new" onclick="toggleTab(this)">Новый завет</div>
+                                <div class="bible-side-tab bible-side-tab-old current" onclick="toggleTab(this)">Ветхий завет</div>
                             </div>
-                            <div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                <div class="bible-book current">Бытие</div>
-                                <div class="bible-book">Исход</div>
-                                <div class="bible-book">Числа</div>
-                                <div class="bible-book">Бытие</div>
-                                <div class="bible-book">Исход</div>
-                                <div class="bible-book">Числа</div>
-                                <div class="bible-book">Бытие</div>
-                                <div class="bible-book">Исход</div>
-                                <div class="bible-book">Числа</div>
-                                <div class="bible-book">Бытие</div>
-                                <div class="bible-book">Исход</div>
+                            <div class="bible-books-new d-none">
+                                <div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
+                                    <div class="bible-book">Матфея</div>
+                                    <div class="bible-book">Марка</div>
+                                </div>
+                            </div>
+                            <div class="bible-books-old">
+                                <div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
+                                    <div class="bible-book current">Бытие</div>
+                                    <div class="bible-book">Исход</div>
+                                </div>
                             </div>
                         </div>
                     </div>
