@@ -44,9 +44,7 @@ $book_name = get_book_name($content[0]['number_books']);
 			            <a href="" class="chapter-select-item">2</a>
 		            </div>
 	            </div>
-
             </div>
-
         </div>
         <div class="d-flex">
             <div class="arrows-wrap d-flex">

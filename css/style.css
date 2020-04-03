@@ -37,7 +37,6 @@ header {
     width: 100%;
     padding: 5px;
     outline: none;
-    color: #9DBFAF;
     border: none;
 }
 
@@ -63,6 +62,20 @@ header {
 
 .search-button:hover svg {
     fill: #1d2124;
+}
+
+.search-result-item {
+    border: 1px solid silver;
+    margin-bottom: 20px;
+}
+
+.search-result-head {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+}
+
+.search-result-text {
+    padding: 15px;
 }
 
 .translations-wrap {
@@ -187,7 +200,17 @@ header {
     height: 50px;
 }
 
+.chapter-select-wrap .current-book {
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
 .bible-nav .current-book {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.search-result-head .current-book {
     font-size: 22px;
     font-weight: 600;
 }
@@ -205,6 +228,10 @@ header {
 .current-chapter-wrap {
     position: relative;
     cursor: pointer;
+}
+
+.current-chapter-wrap:hover .dropdown-icon {
+    fill: #34b1a7;
 }
 
 .chapter-dropdown-list {
@@ -233,18 +260,22 @@ header {
     opacity: 1;
 }
 
-.chapter-select-item {
-    font-size: 22px;
-    font-weight: 600;
-    color: inherit;
+.chapter-select-wrap {
     border-bottom: 1px solid #f2f1ef ;
-    transition: all .3s ease;
 }
 
-.chapter-select-item:hover {
+.chapter-select-wrap:hover {
     border-bottom: 1px solid #34b1a7;
     color: #34b1a7;
 }
+
+.chapter-select-wrap .chapter-select-item {
+    font-size: 22px;
+    font-weight: 600;
+    color: inherit;
+    transition: all .3s ease;
+}
+
 
 .translation-select-wrap {
     margin: 0 auto;
