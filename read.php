@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>read </title>
-    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
-        <div class="search-wrap">
-            <div class="search-group">
-                <input type="text" class="search-input" placeholder="Поиск">
-                <button type="submit" class="search-button">
-                    <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</header>
+<?php
+include('function.php');
+include('database.php');
+include ('header.php');
+?>
+<?php
+$cont =$_GET['chapter'];
+$content = get_content($cont);
+$book_name = get_book_name($content[0]['number_books']);
+?>
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -40,8 +24,11 @@
     <div class="container d-flex justify-content-between">
         <div class="d-flex">
             <div class="chapter-select-wrap d-flex align-items-center">
-                <div class="current-book mr-2">Бытие</div>
-                <div class="current-chapter"><span>Глава </span><span class="chapter-number">1</span></div>
+                    <div class="current-book mr-2">
+                        <?=$book_name[0]['name'] ?>
+                    </div>
+
+                <div class="current-chapter"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
                 <svg width="16px" height="16px" viewBox="0 0 451.847 451.847">
                     <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -96,14 +83,26 @@
                             </div>
                             <div class="bible-books-new d-none">
                                 <div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                    <div class="bible-book">Матфея</div>
-                                    <div class="bible-book">Марка</div>
+                                    <?php
+                                    $books = get_books();
+                                    $transl='syn';
+                                    ?>
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']>=40){
+                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
+                    ';
+                                        }?>
+                                    <?php endforeach;  ?>
                                 </div>
                             </div>
                             <div class="bible-books-old">
                                 <div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                    <div class="bible-book current">Бытие</div>
-                                    <div class="bible-book">Исход</div>
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']<40){
+                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
+                    ';
+                                        }?>
+                                    <?php endforeach;  ?>
                                 </div>
                             </div>
                         </div>
@@ -111,30 +110,9 @@
                 </aside>
             </div>
             <div class="bible-text col-11 col-lg-8">
-                <div id="1">
-                    <sup>1</sup> Аллилуия. Хвалите Бога во святыне Его, хвалите Его на тверди силы Его.</div>
-                <div id="2">
-                    <sup>2</sup> Хвалите Его по могуществу Его, хвалите Его по множеству величия Его.</div>
-                <div id="3">
-                    <sup>3</sup> Хвалите Его со звуком трубным, хвалите Его на псалтири и гуслях.</div>
-                <div id="4">
-                    <sup>4</sup> Хвалите Его с тимпаном и ликами, хвалите Его на струнах и органе.</div>
-                <div id="5">
-                    <sup>5</sup> Хвалите Его на звучных кимвалах, хвалите Его на кимвалах громогласных.</div>
-                <div id="6">
-                    <sup>6</sup> Все дышащее да хвалит Господа! Аллилуия.</div>
-                <div>. Номера стихов – это ссылки, ведущие на раздел со сравнением переводов, параллельными ссылками, текстами с номерами Стронга. Попробуйте,
-                    возможно вы будете приятно удивлены.</div>
+                <?=$content[0]['content'] ?>
             </div>
         </div>
     </div>
 </main>
-<a href="#">
-    <svg class="button_top " width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
-    </svg>
-</a>
-    <script src="js/libs/jquery-3.4.1.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php include ('footer.php')?>
