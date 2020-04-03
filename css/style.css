@@ -280,6 +280,7 @@ header {
     background: none;
     border: 1px solid silver;
     color: #9e9e9e;
+    transition: all .3s ease;
 }
 
 .bible-side-tab, .bible-book {
