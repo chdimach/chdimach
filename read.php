@@ -79,8 +79,7 @@ $book_name = get_book_name($content[0]['number_books']);
         </div>
     </div>
 </div>
-<main class="mt-4">
-    <div class="container-lg container-fluid">
+    <div class="container-lg container-fluid mt-4">
         <div class="row">
             <div class="col-lg-4">
                 <aside>
@@ -136,5 +135,4 @@ $book_name = get_book_name($content[0]['number_books']);
             </div>
         </div>
     </div>
-</main>
 <?php include ('footer.php')?>

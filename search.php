@@ -1,7 +1,6 @@
 <?php
 include('function.php');
 include('database.php');
-include ('header.php');
 ?>
 <?php
 /*$cont =$_GET['chapter'];
@@ -10,6 +9,7 @@ $book_name = get_book_name($content[0]['number_books']);*/
 ?>
 
 <main class="mt-4 search-page">
+	<?php include ('header.php');?>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-4">

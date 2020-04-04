@@ -12,6 +12,15 @@ a {
     text-decoration: none !important;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
 header {
     box-shadow: 0 1px 5px 0 #c6c8ca;
 }
@@ -467,6 +476,28 @@ header {
 .bible-text div:last-child {
     display: none;
 }
+
+footer {
+    background: #abdde5 ;
+    padding: 20px;
+}
+
+.footer-title {
+    font-size: 22px;
+}
+
+.footer-icon {
+    height: 34px;
+    width: 34px;
+    fill: #34b1a7;
+    transition: all .3s ease;
+    margin: 5px;
+}
+
+.footer-link:hover {
+    color: #34b1a7;
+}
+
 
 @media(max-width: 992px) {
     .book {
