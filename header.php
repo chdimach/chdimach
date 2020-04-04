@@ -23,6 +23,12 @@
                     </svg>
                 </button>
             </div>
+
+            <form method="post" action="search.php">
+                <input type="text" name="search">
+                <input type="submit" name="submit" value="поиск">
+            </form>
+            
         </div>
     </div>
 </header>
