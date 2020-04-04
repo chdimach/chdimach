@@ -1,8 +1,10 @@
 <?php
 include('function.php');
 include('database.php');
-include ('header.php');
+
 ?>
+<main>
+
 <?php
 $cont =$_GET['chapter'];
 if (current($_GET)==$_GET['chapter']){
@@ -21,6 +23,7 @@ $next = $content[0]['chapter_number']+1;
 $book_number = $content[0]['number_books'];
 $book_name = get_book_name($content[0]['number_books']);
 ?>
+<?php include ('header.php');?>
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -135,4 +138,5 @@ $book_name = get_book_name($content[0]['number_books']);
             </div>
         </div>
     </div>
+</main>
 <?php include ('footer.php')?>
