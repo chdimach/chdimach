@@ -52,9 +52,9 @@ $book_name = get_book_name($content[0]['number_books']);
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
 		            </svg>
 		            <div class="chapter-dropdown-list d-flex flex-column">
-			            <a href="" class="chapter-select-item">2</a>
-			            <a href="" class="chapter-select-item">2</a>
-			            <a href="" class="chapter-select-item">2</a>
+			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
+			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
+			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
 		            </div>
 	            </div>
             </div>
@@ -122,8 +122,7 @@ $book_name = get_book_name($content[0]['number_books']);
                                 <div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
                                     <?php foreach ($books as $book):?>
                                         <?php if($book['book_number']<40){
-                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
-                    ';
+                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>';
                                         }?>
                                     <?php endforeach;  ?>
                                 </div>
