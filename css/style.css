@@ -217,6 +217,7 @@ header {
 
 .chapter-select-wrap {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .chapter-select-item {
@@ -230,7 +231,7 @@ header {
     cursor: pointer;
 }
 
-.current-chapter-wrap:hover .dropdown-icon {
+.chapter-select-wrap:hover .dropdown-icon {
     fill: #34b1a7;
 }
 
@@ -240,7 +241,6 @@ header {
     top: 40px;
     background: #fafafa;
     border: 1px solid #f2f1ef;
-    padding: 5px;
     transition: all .3s ease;
     z-index: 3;
     visibility: hidden;
@@ -269,13 +269,28 @@ header {
     color: #34b1a7;
 }
 
+.chapter-dropdown-list .chapter-select-item {
+    color: #212529;
+    padding: 15px;
+    margin-right: 0;
+    border-bottom: 1px solid silver;
+}
+
+.chapter-dropdown-list .chapter-select-item:hover {
+    color: inherit;
+    border-bottom: 1px solid #34b1a7;
+}
+
+.chapter-select-item .chapter-number {
+    color: inherit;
+    margin-left: 5px;
+}
+
 .chapter-select-wrap .chapter-select-item {
     font-size: 22px;
     font-weight: 600;
-    color: inherit;
     transition: all .3s ease;
 }
-
 
 .translation-select-wrap {
     margin: 0 auto;
@@ -286,6 +301,20 @@ header {
 .translation-wrap-current {
     position: relative;
     cursor: pointer;
+    transition: all .3s ease;
+}
+
+.translation-select-item {
+    transition: all .3s ease;
+}
+
+.translation-wrap-current:hover .current-translation {
+    color: #34b1a7;
+    border-bottom: 1px solid #34b1a7;
+}
+
+.translation-wrap-current:hover .dropdown-icon {
+    fill: #34b1a7;
 }
 
 .dropdown-icon {
@@ -486,7 +515,13 @@ header {
         left: 1%;
     }
 
-    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter  {
+    .chapter-dropdown-list {
+        top: 20px;
+    }
+
+    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .chapter-number  {
         font-size: 11px;
     }
+
+
 }
