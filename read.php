@@ -22,31 +22,41 @@ $book_number = $content[0]['number_books'];
 $book_name = get_book_name($content[0]['number_books']);
 ?>
 <div class="bible-nav">
-    <div class="translation-select-wrap d-flex align-items-center justify-content-center">
+    <div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
-            <div class="current-translation">Синодальный перевод</div>
-            <svg width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847" style="margin-left: 5px">
+            <div class="current-translation translation-select-item" onclick="translationsDropdown()">Синодальный перевод</div>
+            <svg class="dropdown-icon" width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847" style="margin-left: 5px">
                 <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
             </svg>
         </div>
+	    <div class="translations-dropdown-list d-flex flex-column">
+			<a class="translation-select-item" href="">Новый русский перевод</a>
+			<a class="translation-select-item" href="">Новый русский перевод</a>
+	    </div>
     </div>
 </div>
 <div class="bible-nav">
     <div class="container d-flex justify-content-between">
         <div class="d-flex">
-            <div class="chapter-select-wrap d-flex align-items-center">
+            <div class="chapter-select-wrap d-flex align-items-center" onclick="chapterDropdown()">
                     <div class="current-book mr-2">
                         <?=$book_name[0]['name'] ?>
                     </div>
-
-                <div class="current-chapter"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
-                <svg width="16px" height="16px" viewBox="0 0 451.847 451.847">
-                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+	            <div class="current-chapter-wrap d-flex align-items-center">
+		            <div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
+		            <svg class="dropdown-icon" width="16px" height="16px" viewBox="0 0 451.847 451.847">
+			            <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
-                </svg>
+		            </svg>
+		            <div class="chapter-dropdown-list d-flex flex-column">
+			            <a href="" class="chapter-select-item">2</a>
+			            <a href="" class="chapter-select-item">2</a>
+			            <a href="" class="chapter-select-item">2</a>
+		            </div>
+	            </div>
             </div>
         </div>
         <div class="d-flex">

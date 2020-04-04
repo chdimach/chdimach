@@ -11,6 +11,17 @@ function toggleBibleBooks() {
     }
 }
 
+function translationsDropdown() {
+    $('.translation-wrap-current').toggleClass('visible');
+    $('.translations-dropdown-list').toggleClass('visible')
+}
+
+function chapterDropdown() {
+$('.current-chapter-wrap').toggleClass('visible');
+$('.chapter-dropdown-list').toggleClass('visible')
+}
+
+
 function toggleTab(e) {
     $('.bible-side-tab').removeClass("current");
     $(e).addClass('current');
