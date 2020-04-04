@@ -481,8 +481,12 @@ header {
 }
 
 
-@media (max-height: 576px) {
+@media (max-width: 576px) {
     .bible-side-wrap-toggle {
         left: 1%;
+    }
+
+    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter  {
+        font-size: 11px;
     }
 }
