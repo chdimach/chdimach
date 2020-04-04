@@ -4,9 +4,9 @@ include('database.php');
 include ('header.php');
 ?>
 <?php
-$cont =$_GET['chapter'];
+/*$cont =$_GET['chapter'];
 $content = get_content($cont);
-$book_name = get_book_name($content[0]['number_books']);
+$book_name = get_book_name($content[0]['number_books']);*/
 ?>
 
 <main class="mt-4 search-page">
@@ -77,10 +77,9 @@ $book_name = get_book_name($content[0]['number_books']);
 					<div class="search-result-item">
 						<div class="search-result-head d-flex">
 							<div class="current-book mr-2">
-                                <?=$book_name[0]['name'] ?>
 								Бытие
 							</div>
-							<div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
+							<div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"> 1</span></div>
 						</div>
 						<div class="search-result-text">
 							<div id="2">
@@ -90,10 +89,9 @@ $book_name = get_book_name($content[0]['number_books']);
 					<div class="search-result-item">
 						<div class="search-result-head d-flex">
 							<div class="current-book mr-2">
-                                <?=$book_name[0]['name'] ?>
 								Бытие
 							</div>
-							<div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
+							<div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number">1</span></div>
 						</div>
 						<div class="search-result-text">
 							<div id="2">
