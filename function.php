@@ -46,3 +46,11 @@ function get_current_translations($type){
     $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $books;
 }
+function get_next_chapter($number_book,$chapter_number){
+    global $link;
+    mysqli_query($link,'set character_set_results ="utf8"');
+    $sql="SELECT * FROM bible_translations WHERE (number_books='$number_book') OR (chapter_number='$chapter_number')";
+    $result = mysqli_query($link, $sql);
+    $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $books;
+}

@@ -5,7 +5,20 @@ include ('header.php');
 ?>
 <?php
 $cont =$_GET['chapter'];
-$content = get_content($cont);
+if (current($_GET)==$_GET['chapter']){
+    $content = get_content($cont);
+}
+else{
+    $chap_num =$_GET['number'];
+    $num_book =$_GET['number_book'];
+    $content = get_next_chapter($num_book,$chap_num);
+}
+
+
+
+$back = $content[0]['chapter_number']-1;
+$next = $content[0]['chapter_number']+1;
+$book_number = $content[0]['number_books'];
 $book_name = get_book_name($content[0]['number_books']);
 ?>
 <div class="bible-nav">
@@ -38,14 +51,14 @@ $book_name = get_book_name($content[0]['number_books']);
         </div>
         <div class="d-flex">
             <div class="arrows-wrap d-flex">
-                <a href="#" class="arrow-back">
+                <a href="read.php?number=<?=$back.'&number_book='.$book_number.'&chapter='.$cont?> " class="arrow-back">
                     <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
                                 c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
                     </svg>
                 </a>
-                <a href="#" class="arrow-next">
+                <a href="read.php?number=<?=$next.'&number_book='.$book_number.'&chapter='.$cont ?>" class="arrow-next">
                     <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
