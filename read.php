@@ -4,7 +4,6 @@ include('database.php');
 include ('header.php');
 ?>
 <main>
-
 <?php
 $cont =$_GET['chapter'];
 if (current($_GET)==$_GET['chapter']){

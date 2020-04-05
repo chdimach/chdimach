@@ -46,8 +46,7 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                     <?php foreach ($books as $book): ?>
                                         <?php if ($book['book_number'] >= 40) {
                                             echo '<div class="bible-book"><a href="chapters.php?trans=' . $transl . '&number_book=' . $book["book_number"] . '& name=' . $book['name'] . '" class="book"><span class="book-name">' . $book['name'] . '</span><span class="book-abbr">' . $book['short_name'] . '</span></a></div>
-                    ';
-                                        } ?>
+                    ';} ?>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -56,12 +55,8 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                     <?php foreach ($books as $book): ?>
                                         <?php if ($book['book_number'] < 40) {
                                             echo '<div class="bible-book"><a href="chapters.php?trans=' . $transl . '&number_book=' . $book["book_number"] . '& name=' . $book['name'] . '" class="book"><span class="book-name">' . $book['name'] . '</span><span class="book-abbr">' . $book['short_name'] . '</span></a></div>
-                    ';
-                                        } ?>
-
-                                    <?php endforeach;
-
-                                    ?>
+                    ';} ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
@@ -110,11 +105,8 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                         ?>
                                     </div>
                                     <div class="current-chapter chapter-select-item">
-
                                         <a href="read.php?chapter=<?= $value['id'] ?>"
                                            class="chapter-number"><span>Глава </span> <?= $value['chapter_number'] ?></a>
-
-
                                     </div>
                                 </div>
                                 <div class="search-result-text">
@@ -122,7 +114,6 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
                     </div>
                 </div>
             </div>
