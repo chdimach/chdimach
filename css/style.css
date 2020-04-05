@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 :focus {
     outline-style: none;
     outline-width: 0 !important;
@@ -10,15 +24,6 @@
 
 a {
     text-decoration: none !important;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex-grow: 1;
 }
 
 header {

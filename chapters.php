@@ -1,10 +1,9 @@
 <?php
 include('function.php');
 include('database.php');
+include ('header.php');
 ?>
-
 <main>
-	<?php include ('header.php');?>
 	<div class="container">
 		<a href="index.php" class="translation-title-wrap d-flex align-items-center">
 			<svg fill="#007bff" height="22px" width="22px" x="0px" y="0px"
@@ -30,7 +29,6 @@ include('database.php');
                 <?php endforeach;  ?>
 			</div>
 		</div>
-
 	</div>
 </main>
 <?php include ('footer.php')?>

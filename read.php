@@ -3,7 +3,6 @@ include('function.php');
 include('database.php');
 include ('header.php');
 ?>
-<main>
 <?php
 $cont =$_GET['chapter'];
 if (current($_GET)==$_GET['chapter']){
@@ -20,6 +19,7 @@ $book_number = $content[0]['number_books'];
 $book_name = get_book_name($content[0]['number_books']);
 $all_chapters_current_book = universal_funtion_content('number_books',$content[0]['number_books']);
 ?>
+<main>
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -58,7 +58,7 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
 	            </div>
             </div>
         </div>
-        <!--<div class="d-flex">
+        <div class="d-flex">
             <div class="arrows-wrap d-flex">
                 <a href="read.php?number=<?/*=$back.'&number_book='.$book_number.'&chapter='.$cont*/?> " class="arrow-back">
                     <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
@@ -75,7 +75,7 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
                     </svg>
                 </a>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
     <div class="container-lg container-fluid mt-4">
