@@ -85,6 +85,8 @@ header {
 
 .search-result-text {
     padding: 15px;
+    height: 110px;
+    overflow: hidden;
 }
 
 .translations-wrap {
