@@ -1,7 +1,7 @@
 <?php
 include('function.php');
 include('database.php');
-
+include ('header.php');
 ?>
 <main>
 
@@ -15,15 +15,12 @@ else{
     $num_book =$_GET['number_book'];
     $content = get_next_chapter($num_book,$chap_num);
 }
-
-
-
 $back = $content[0]['chapter_number']-1;
 $next = $content[0]['chapter_number']+1;
 $book_number = $content[0]['number_books'];
 $book_name = get_book_name($content[0]['number_books']);
+$all_chapters_current_book = universal_funtion_content('number_books',$content[0]['number_books']);
 ?>
-<?php include ('header.php');?>
 <div class="bible-nav">
     <div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center">
         <div class="translation-wrap-current d-flex align-items-center justify-content-center">
@@ -55,23 +52,23 @@ $book_name = get_book_name($content[0]['number_books']);
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
 		            </svg>
 		            <div class="chapter-dropdown-list d-flex flex-column">
-			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
-			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
-			            <div class="chapter-select-item"><span>Глава</span><a class="chapter-number" href="">1</a></div>
+                        <?php foreach ($all_chapters_current_book as $chap): ?>
+                            <div class="chapter-select-item"><a class="chapter-number" href="read.php?chapter=<?= $chap['id'] ?>"><span>Глава</span><?=$chap['chapter_number']?></a></div>
+                        <?php endforeach; ?>
 		            </div>
 	            </div>
             </div>
         </div>
-        <div class="d-flex">
+        <!--<div class="d-flex">
             <div class="arrows-wrap d-flex">
-                <a href="read.php?number=<?=$back.'&number_book='.$book_number.'&chapter='.$cont?> " class="arrow-back">
+                <a href="read.php?number=<?/*=$back.'&number_book='.$book_number.'&chapter='.$cont*/?> " class="arrow-back">
                     <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
                                 c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
                     </svg>
                 </a>
-                <a href="read.php?number=<?=$next.'&number_book='.$book_number.'&chapter='.$cont ?>" class="arrow-next">
+                <a href="read.php?number=<?/*=$next.'&number_book='.$book_number.'&chapter='.$cont */?>" class="arrow-next">
                     <svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
@@ -79,7 +76,7 @@ $book_name = get_book_name($content[0]['number_books']);
                     </svg>
                 </a>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
     <div class="container-lg container-fluid mt-4">

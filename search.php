@@ -71,7 +71,7 @@ $book_name = get_book_name($content[0]['number_books']);*/
             <div class="search-wrap col-12 col-lg-8 flex-column">
                 <div class="search-wrap w-100">
                     <form method="post" action="search.php" class="search-group">
-                        <input type="text" name="search" class="search-input" placeholder="Поиск">
+                        <input  type="text" name="search" class="search-input" placeholder="Поиск">
                         <button type="submit" class="search-button" name="submit" value="поиск">
                             <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -109,29 +109,20 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                        echo $name_book[0]['name'];
                                         ?>
                                     </div>
-                                    <div class="current-chapter chapter-select-item"><span>Глава </span><span
-                                                class="chapter-number"> <?= $value['chapter_number'] ?></span></div>
+                                    <div class="current-chapter chapter-select-item">
+
+                                        <a href="read.php?chapter=<?= $value['id'] ?>"
+                                           class="chapter-number"><span>Глава </span> <?= $value['chapter_number'] ?></a>
+
+
+                                    </div>
                                 </div>
                                 <div class="search-result-text">
                                     <?= $value['content'] ?>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                        <div class="search-result-item">
-                            <div class="search-result-head d-flex">
-                                <div class="current-book mr-2">
-                                    Бытие
-                                </div>
-                                <div class="current-chapter chapter-select-item"><span>Глава </span><span
-                                            class="chapter-number">1</span></div>
-                            </div>
-                            <div class="search-result-text">
-                                <div id="2">
-                                    <sup>2</sup> Земля же была безвидна и пуста, и тьма над бездною, и Дух Божий носился
-                                    над водою.
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>

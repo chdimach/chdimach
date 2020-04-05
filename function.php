@@ -54,3 +54,15 @@ function get_next_chapter($number_book,$chapter_number){
     $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $books;
 }
+
+
+function universal_funtion_content($name,$value){
+
+    global $link;
+    mysqli_query($link,'set character_set_results ="utf8"');
+    $sql="SELECT * FROM boks_content WHERE ".$name."='$value'";
+    mysqli_query($link, "SET NAMES 'UTF8'");
+    $result = mysqli_query($link, $sql);
+    $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $books;
+}
