@@ -82,7 +82,6 @@ $book_name = get_book_name($content[0]['number_books']);*/
                 </div>
                 <?php
                 if (isset($_POST['submit'])) {
-
                     $link = new mysqli('localhost', 'root', '', 'bible');
                     $search = explode(" ", $_POST['search']);
                     $count = count($search);
@@ -105,15 +104,10 @@ $book_name = get_book_name($content[0]['number_books']);*/
                             <div class="search-result-item">
                                 <div class="search-result-head d-flex">
                                     <div class="current-book mr-2">
-                                        <?  print_r($value);
-
+                                        <?php
                                         $name_book = get_book_name($value['number_books']);
-
-
+                                       echo $name_book[0]['name'];
                                         ?>
-                                        <?
-                                        print_r($name_book);
-                                        $name_book[0]['name'] ?>
                                     </div>
                                     <div class="current-chapter chapter-select-item"><span>Глава </span><span
                                                 class="chapter-number"> <?= $value['chapter_number'] ?></span></div>
