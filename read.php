@@ -110,7 +110,7 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
                                     ?>
                                     <?php foreach ($books as $book):?>
                                         <?php if($book['book_number']>=40){
-                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>
+                                            echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>
                     ';
                                         }?>
                                     <?php endforeach;  ?>
@@ -118,9 +118,9 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
                             </div>
                             <div class="bible-books-old">
                                 <div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                    <?php foreach ($books as $book):?>
+	                                <?php foreach ($books as $book):?>
                                         <?php if($book['book_number']<40){
-                                            echo '<div class="bible-book"><a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="book"><span class="book-name">'.$book['name'] .'</span><span class="book-abbr">'.$book['short_name'].'</span></a></div>';
+                                            echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>';
                                         }?>
                                     <?php endforeach;  ?>
                                 </div>

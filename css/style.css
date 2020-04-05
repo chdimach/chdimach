@@ -83,6 +83,10 @@ header {
     border-bottom: 1px solid silver;
 }
 
+.search-result-head a {
+    color: #2f2f2f;
+}
+
 .search-result-text {
     padding: 15px;
     height: 110px;
@@ -429,9 +433,12 @@ header {
 }
 
 .bible-side-wrap {
-    color: #2f2f2f;
     border: 1px solid silver;
     cursor: pointer;
+}
+
+.bible-side-wrap .bible-book {
+    color: #2f2f2f;
 }
 
 .bible-side-tab {
@@ -443,7 +450,7 @@ header {
     transition: all .3s ease;
 }
 
-.bible-side-tab, .bible-book {
+.bible-side-tab, .bible-book  {
     padding: 15px 5px 15px 22px;
 }
 
@@ -556,9 +563,7 @@ footer {
         top: 20px;
     }
 
-    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .chapter-number  {
+    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .bible-nav .chapter-number  {
         font-size: 11px;
     }
-
-
 }
