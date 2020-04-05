@@ -1,7 +1,6 @@
 <?php
 include('function.php');
 include('database.php');
-include('header.php');
 ?>
 <?php
 /*$cont =$_GET['chapter'];
@@ -10,14 +9,14 @@ $book_name = get_book_name($content[0]['number_books']);*/
 ?>
 
 <main class="mt-4 search-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <aside>
-                    <div class="bible-side-wrap-toggle w-lg-100 mb-2 d-flex justify-content-center align-items-center"
-                         onclick="toggleBibleBooks()">
-                        <svg class="double-arrow" width="12px" height="12px" viewBox="0 0 284.936 284.936">
-                            <path d="M277.515,135.9L144.464,2.857C142.565,0.955,140.375,0,137.9,0c-2.472,0-4.659,0.955-6.562,2.857l-14.277,14.275
+	<?php include ('header.php');?>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<aside>
+				<div class="bible-side-wrap-toggle w-lg-100 mb-2 d-flex justify-content-center align-items-center" onclick="toggleBibleBooks()">
+					<svg class="double-arrow" width="12px" height="12px" viewBox="0 0 284.936 284.936">
+						<path d="M277.515,135.9L144.464,2.857C142.565,0.955,140.375,0,137.9,0c-2.472,0-4.659,0.955-6.562,2.857l-14.277,14.275
     c-1.903,1.903-2.853,4.089-2.853,6.567c0,2.478,0.95,4.664,2.853,6.567l112.207,112.204L117.062,254.677
     c-1.903,1.903-2.853,4.093-2.853,6.564c0,2.477,0.95,4.667,2.853,6.57l14.277,14.271c1.902,1.905,4.089,2.854,6.562,2.854
     c2.478,0,4.665-0.951,6.563-2.854l133.051-133.044c1.902-1.902,2.851-4.093,2.851-6.567S279.417,137.807,277.515,135.9z"/>
@@ -61,8 +60,7 @@ $book_name = get_book_name($content[0]['number_books']);*/
                                         } ?>
 
                                     <?php endforeach;
-                                    global $link;
-                                    mysqli_close($link);
+
                                     ?>
                                 </div>
                             </div>
@@ -71,14 +69,16 @@ $book_name = get_book_name($content[0]['number_books']);*/
                 </aside>
             </div>
             <div class="search-wrap col-12 col-lg-8 flex-column">
-                <div class="search-group">
-                    <input type="text" class="search-input" value="Запрос который ввел пользователь">
-                    <button type="submit" class="search-button">
-                        <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/>
-                        </svg>
-                    </button>
+                <div class="search-wrap w-100">
+                    <form method="post" action="search.php" class="search-group">
+                        <input type="text" name="search" class="search-input" placeholder="Поиск">
+                        <button type="submit" class="search-button" name="submit" value="поиск">
+                            <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
                 <?php
                 if (isset($_POST['submit'])) {
