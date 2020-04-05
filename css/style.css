@@ -92,6 +92,10 @@ header {
 .search-result-head a {
     color: #2f2f2f;
 }
+.search-result-head a:hover {
+    color: #00B4CC;
+    cursor:pointer;
+}
 
 .search-result-text {
     padding: 15px;
@@ -214,6 +218,8 @@ header {
 }
 
 .bible-nav {
+    display: flex;
+    align-items: center;
     background: #f2f1ef;
     padding: 5px;
     border-bottom: 1px dotted #ccc;
