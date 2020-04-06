@@ -7,7 +7,7 @@ include ('header.php');
 	<div class="container">
 		<div class="translations-wrap text-center text-sm-left">
 			<div class="translations-header">
-				<h3>Переводы Библии</h3>
+				<h1 class="translations-header-title">Переводы Библии</h1>
 			</div>
 			<nav class="translations-nav">
 				<div class="translations-items d-flex flex-wrap justify-content-center justify-content-sm-start">
@@ -15,11 +15,11 @@ include ('header.php');
                     $translations = get_translations();
                     ?>
                     <?php foreach ($translations as $translation):?>
-                        <div class="translation-item ">
+                        <h3 class="translation-item ">
                             <a class="translation-link" href="?translation =<?=$translation['type'] ?>">
                                 <span class="translation-title"><?=$translation['name'] ?></span>
                             </a>
-                        </div>
+                        </h3>
                     <?php endforeach;  ?>
 				</div>
 			</nav>
@@ -28,7 +28,7 @@ include ('header.php');
 <div class="container">
 	<div>
 		<div class="d-flex align-items-center justify-content-center mt-5 mb-2">
-			<div class="group-name">Ветхий завет</div><span class="pipe">|</span><small>Синодальный перевод</small>
+			<h3 class="group-name">Ветхий завет</h3><span class="pipe">|</span><small>Синодальный перевод</small>
 		</div>
 		<div class="books-wrap">
 			<div class="books d-flex flex-wrap justify-content-center">
@@ -47,7 +47,7 @@ include ('header.php');
 	</div>
 	<div>
 		<div class="d-flex align-items-center justify-content-center mt-5">
-			<div class="group-name">Новый завет</div><span class="pipe">|</span><small>Синодальный перевод</small>
+			<h3 class="group-name">Новый завет</h3><span class="pipe">|</span><small>Синодальный перевод</small>
 		</div>
 		<div class="books-wrap">
 			<div class="books d-flex flex-wrap justify-content-center">

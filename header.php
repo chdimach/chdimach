@@ -11,6 +11,7 @@
       Вы можете читать её онлайн, это легко и удобно на нашем сайте. ПОИСК и интерфейс
       помогут в этом достойном деле. Сдесь отсутствуют комментарии и толкование.    " />
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
