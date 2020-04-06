@@ -28,7 +28,7 @@ include ('header.php');
 <div class="container">
 	<div>
 		<div class="d-flex align-items-center justify-content-center mt-5 mb-2">
-			<h3 class="group-name">Ветхий завет</h3><span class="pipe">|</span><small>Синодальный перевод</small>
+			<h2 class="group-name">Ветхий завет</h2>
 		</div>
 		<div class="books-wrap">
 			<div class="books d-flex flex-wrap justify-content-center">
@@ -47,7 +47,7 @@ include ('header.php');
 	</div>
 	<div>
 		<div class="d-flex align-items-center justify-content-center mt-5">
-			<h3 class="group-name">Новый завет</h3><span class="pipe">|</span><small>Синодальный перевод</small>
+			<h2 class="group-name">Новый завет</h2>
 		</div>
 		<div class="books-wrap">
 			<div class="books d-flex flex-wrap justify-content-center">

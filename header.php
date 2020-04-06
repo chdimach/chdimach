@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Bible</title>
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
