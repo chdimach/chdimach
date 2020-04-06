@@ -7,7 +7,7 @@ include ('header.php');
 	<div class="container">
 		<div class="translations-wrap text-center text-sm-left">
 			<div class="translations-header">
-				<h3>Переводы Библии</h3>
+				<h1>Переводы Библии</h1>
 			</div>
 			<nav class="translations-nav">
 				<div class="translations-items d-flex flex-wrap justify-content-center justify-content-sm-start">
