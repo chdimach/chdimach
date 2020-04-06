@@ -6,7 +6,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Bible</title>
+    <title>Библия, чтение онлайн, несколько переводов и поиск. Без коментариев и толкования . </title>
+    <meta name="description" content="Библия - уникальный бестселлер. Контент пришедший через 1000-чи лет.
+      Вы можете читать её онлайн, это легко и удобно на нашем сайте. ПОИСК и интерфейс
+      помогут в этом достойном деле. Здесь отсутствуют комментарии и толкование.    " />
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">

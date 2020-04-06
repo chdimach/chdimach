@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    font-family: "RobotoRegular", sans-serif;
 }
 
 html, body {
@@ -113,8 +112,7 @@ header {
 }
 
 .translations-header-title {
-    font-family: "RobotoCondensed-Regular", sans-serif;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .translations-header, .translations-nav {
@@ -129,7 +127,6 @@ header {
     padding: 10px;
     transition: all .3s ease;
     font-size: 16px;
-    font-family: "RobotoCondensed-Bold", sans-serif;
 }
 
 .translation-item:hover {
@@ -141,7 +138,7 @@ header {
     background: #eef3fa ;
 }
 
-.translation-item.selected .comeback-title {
+.translation-item.selected .translation-title {
     color: #1d2124;
 }
 
@@ -150,11 +147,12 @@ header {
 }
 
 .group-name {
-    font-family: "RobotoCondensed-Regular", sans-serif;
+    font-size: 20px;
 }
 
-.books {
-    font-family: "RobotoRegular", sans-serif;
+.pipe {
+    margin: 0 5px;
+    color: #ccc ;
 }
 
 .book {
@@ -173,7 +171,7 @@ header {
 
 .book-name, .book-abbr {
     color: #fafafa;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 .book-abbr {
@@ -197,17 +195,13 @@ header {
     transition: 0.2s;
 }
 
-.comeback-title-wrap {
+.translation-title-wrap {
     padding: 10px 0;
 }
 
-.comeback-title-wrap .comeback-title {
+.translation-title-wrap .translation-title {
     font-size: 24px;
     margin-bottom: 1px;
-}
-
-.comeback-title, .chapter-name, .chapters-title {
-    font-family: "RobotoCondensed-Regular", sans-serif;
 }
 
 .chapter {
@@ -595,10 +589,6 @@ header {
 footer {
     background: #f2f1ef ;
     padding: 20px;
-}
-
-.footer-item {
-    font-family: "RobotoCondensed-Regular", sans-serif;
 }
 
 .footer-title {
