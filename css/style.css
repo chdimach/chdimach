@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 :focus {
     outline-style: none;
     outline-width: 0 !important;
@@ -10,15 +24,6 @@
 
 a {
     text-decoration: none !important;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex-grow: 1;
 }
 
 header {
@@ -81,6 +86,10 @@ header {
 .search-result-head {
     padding: 15px;
     border-bottom: 1px solid silver;
+}
+
+.search-result-head a {
+    color: #2f2f2f;
 }
 
 .search-result-text {
@@ -429,9 +438,12 @@ header {
 }
 
 .bible-side-wrap {
-    color: #2f2f2f;
     border: 1px solid silver;
     cursor: pointer;
+}
+
+.bible-side-wrap .bible-book {
+    color: #2f2f2f;
 }
 
 .bible-side-tab {
@@ -443,7 +455,7 @@ header {
     transition: all .3s ease;
 }
 
-.bible-side-tab, .bible-book {
+.bible-side-tab, .bible-book  {
     padding: 15px 5px 15px 22px;
 }
 
@@ -556,9 +568,7 @@ footer {
         top: 20px;
     }
 
-    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .chapter-number  {
+    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .bible-nav .chapter-number  {
         font-size: 11px;
     }
-
-
 }
