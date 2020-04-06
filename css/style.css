@@ -14,7 +14,6 @@ html, body {
 
 main {
     flex: 1 0 auto;
-    min-height: 65vh;
 }
 
 :focus {
@@ -276,6 +275,8 @@ header {
     z-index: 3;
     visibility: hidden;
     opacity: 0;
+    overflow-y: auto;
+    max-height: 260px;
 }
 
 .current-chapter-wrap .dropdown-icon {
@@ -315,6 +316,10 @@ header {
 .chapter-select-item .chapter-number {
     color: inherit;
     margin-left: 5px;
+}
+
+.chapter-dropdown-list .chapter-select-item span {
+    margin-right: 5px;
 }
 
 .chapter-select-wrap .chapter-select-item {
@@ -543,7 +548,7 @@ footer {
 
     .bible-side {
         position: absolute;
-        width: 92%;
+        width: 97%;
         z-index: 1;
         background: #fafafa;
     }
@@ -571,6 +576,10 @@ footer {
 
 
 @media (max-width: 576px) {
+    .bible-side {
+        width: 94% ;
+    }
+
     .bible-side-wrap-toggle {
         left: 1%;
     }
