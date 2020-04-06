@@ -112,6 +112,10 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
+.translations-header-title {
+    font-size: 30px;
+}
+
 .translations-header, .translations-nav {
     padding: 10px 15px;
 }
@@ -123,6 +127,7 @@ header {
 .translation-item {
     padding: 10px;
     transition: all .3s ease;
+    font-size: 16px;
 }
 
 .translation-item:hover {
@@ -143,7 +148,6 @@ header {
 }
 
 .group-name {
-    font-weight: 600;
     font-size: 20px;
 }
 
