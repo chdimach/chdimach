@@ -7,12 +7,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Библия, чтение онлайн, несколько переводов и поиск. Без коментариев и толкования . </title>
-    <meta name="description" content="Библия - уникальный бестселлер. Контент пришедший через 1000-чи лет.
-      Вы можете читать её онлайн, это легко и удобно на нашем сайте. ПОИСК и интерфейс
-      помогут в этом достойном деле. Здесь отсутствуют комментарии и толкование.    " />
+    <meta name="description" content=" Читать Библию онлайн, используя разные переводы, это легко и удобно на нашем сайте. ПОИСК и практичный интерфейс
+      помогут в этом достойном деле, поскольку Библия - уникальный бестселлер, контент пришедший через 1000-чи лет. Здесь отсутствуют комментарии и толкование." />.
+    <meta name="keywords" content="Вы можете читать Библию онлайн используя разные переводы и поиск.">
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="keywords" content="">
 </head>
 <body>
 <div class="wrapper">
