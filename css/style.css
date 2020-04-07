@@ -1,7 +1,23 @@
+/*ОБЩИЕ СТИЛИ*/
+
 * {
     box-sizing: border-box;
     font-family: "RobotoRegular", sans-serif;
 }
+
+:focus {
+    outline-style: none;
+    outline-width: 0 !important;
+    outline-color: transparent !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/*=========*/
+
+/*Стили для того чтобы прижать футер к низу страницы*/
 
 html, body {
     height: 100%;
@@ -17,15 +33,9 @@ main {
     flex: 1 0 auto;
 }
 
-:focus {
-    outline-style: none;
-    outline-width: 0 !important;
-    outline-color: transparent !important;
-}
+/*=========*/
 
-a {
-    text-decoration: none !important;
-}
+/*Стили для хедера и элементов которые в нём используються*/
 
 header {
     box-shadow: 0 1px 5px 0 #c6c8ca;
@@ -35,6 +45,8 @@ header {
     width: 160px;
     height: 90px;
 }
+
+/*Стили для строки поиска и результатов поиска*/
 
 .search-wrap{
     width: 40%;
@@ -103,6 +115,10 @@ header {
     overflow: hidden;
 }
 
+/*=========*/
+
+/*Стили для блока переводов*/
+
 .translations-wrap {
     border: 1px solid #ddd;
 }
@@ -149,6 +165,10 @@ header {
     color: #00B4CC;
 }
 
+/*=========*/
+
+/*Стили для блока с плитками книг*/
+
 .group-name {
     font-family: "RobotoCondensed-Regular", sans-serif;
 }
@@ -176,22 +196,9 @@ header {
     display: none;
 }
 
-.button_top{
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #34B1A7;
-    color: #ffffff;
-    padding: 7px;
-    z-index: 3;
-}
+/*=========*/
 
-.button_top:hover{
-    background-color: #F9AF02;
-    transition: 0.2s;
-}
+/*Стили для страницы с главами*/
 
 .comeback-title-wrap {
     padding: 10px 0;
@@ -217,11 +224,16 @@ header {
     transition: all .3s ease;
 }
 
-
 .chapter:hover {
     background: #34b1a7;
     color: #fafafa;
 }
+
+/*=========*/
+
+/*Страница для чтения*/
+
+/*Навигация*/
 
 .bible-nav {
     display: flex;
@@ -501,6 +513,10 @@ header {
     border-bottom-right-radius: 15px ;
 }
 
+/*=========
+Конец стилей навигации
+*/
+
 .bible-side-wrap-toggle {
     padding: 5px;
     text-align: center;
@@ -589,6 +605,8 @@ header {
     display: none;
 }
 
+/*Футер*/
+
 footer {
     background: #f2f1ef ;
     padding: 20px;
@@ -614,6 +632,28 @@ footer {
     color: #34b1a7;
 }
 
+/*=========*/
+
+/*Кнопка наверх*/
+
+.button_top{
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #34B1A7;
+    color: #ffffff;
+    padding: 7px;
+    z-index: 3;
+}
+
+.button_top:hover{
+    background-color: #F9AF02;
+    transition: 0.2s;
+}
+
+/*=========*/
 
 @media(max-width: 992px) {
     .book {
