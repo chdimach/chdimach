@@ -5,6 +5,7 @@ include ('header.php');
 ?>
 <main>
 	<div class="container">
+        <h1 class="bible-h1">Библия онлайн</h1>
 		<div class="translations-wrap text-center text-sm-left">
 			<div class="translations-header">
 				<h2 class="group-name">Переводы Библии</h2>

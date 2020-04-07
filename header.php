@@ -18,9 +18,8 @@
 <div class="wrapper">
 <header class="mb-4">
     <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div>
-        <h1>Библия онлайн</h1>
-        <div class="search-wrap">
+        <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div
+          <div class="search-wrap">
             <form method="post" action="search.php" class="search-group">
                 <input type="text" name="search" class="search-input" placeholder="Поиск">
                 <button type="submit" class="search-button" name="submit" value="поиск">
