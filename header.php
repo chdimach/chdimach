@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="keywords" content="">
 </head>
 <body>
 <div class="wrapper">
