@@ -66,7 +66,7 @@ $ser= $_POST['search'];
                 <div class="search-wrap w-100">
                     <form method="post" action="search.php" class="search-group">
                         <input value="<?=$ser ?>"  type="text" name="search" class="search-input" placeholder="Поиск">
-                        <button type="submit" class="search-button" name="submit" >
+                        <button type="submit" class="search-button" name="submit" onclick="highlight()" >
                             <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/>
@@ -91,12 +91,10 @@ $ser= $_POST['search'];
                     $result = mysqli_query($link, $sql);
                     $qer = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     $quantity = count($qer);
-
                 }
                 ?>
                 <div class="search-results mt-4">
                     <div class="search-results-wrap">
-
                    <h1>По запросу: "<?=$ser ;?> " найдено <?=$quantity?> стихов</h1>
                         <?php foreach ($qer as $value): ?>
                             <div class="search-result-item">
@@ -127,4 +125,5 @@ $ser= $_POST['search'];
         </div>
     </div>
 </main>
+
 <? include('footer.php');?>

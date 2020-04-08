@@ -39,3 +39,7 @@ $('.bible-side-tab-old').on('click', function () {
     $('.bible-books-new').addClass('d-none');
 });
 
+function colorTheme() {
+    $('body').toggleClass('dark');
+}
+

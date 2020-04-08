@@ -14,6 +14,7 @@
 a {
     text-decoration: none !important;
 }
+
 .bible-h1{
     font-size: 20px;
     opacity:  0.0;
@@ -31,11 +32,15 @@ html, body {
 .wrapper {
     display: flex;
     flex-direction: column;
-   /* min-height: 100%;*/
+    /*min-height: 100%;*/
 }
 
 main {
     flex: 1 0 auto;
+}
+
+footer {
+    flex: 0 0 auto;
 }
 
 /*=========*/
@@ -151,11 +156,20 @@ header {
     padding: 10px;
     transition: all .3s ease;
     font-size: 16px;
+    color: #34b1a7;
 }
 
 .translation-item:hover {
     cursor: pointer;
     background: #eef3fa;
+}
+
+.translation-link {
+    color: #34b1a7;
+}
+
+.translation-item:hover .translation-link {
+    color: #007bff;
 }
 
 .translation-item.selected {
@@ -207,6 +221,7 @@ header {
 
 .comeback-title-wrap {
     padding: 10px 0;
+    color: #34b1a7;
 }
 
 .comeback-title-wrap .comeback-title {
@@ -456,7 +471,6 @@ header {
     z-index: 3;
     background: #fafafa;
     border: 1px solid #f2f1ef;
-    padding: 5px;
     visibility: hidden;
     opacity: 0;
     transition: all .3s ease;
@@ -476,6 +490,7 @@ header {
 .translations-dropdown-list .translation-select-item {
     color: inherit;
     transition: all .3s ease;
+    padding: 5px;
 }
 
 .translations-dropdown-list .translation-select-item:hover {
@@ -633,8 +648,37 @@ footer {
     margin: 5px;
 }
 
-.footer-link:hover {
+.footer-link {
     color: #34b1a7;
+}
+
+.footer-link:hover {
+    color: #00b4cc;
+}
+
+.color-themes-wrapper {
+    cursor: pointer;
+}
+
+.moon-icon {
+    margin: 50% 0;
+    fill: #2d2f34;
+    transition: all .7s ease;
+}
+
+.moon-icon:hover {
+    fill: #34b1a7;
+}
+
+.sun-icon {
+    margin: 50% 0;
+    display: none;
+    fill: #fafafa;
+    transition: all .7s ease;
+}
+
+.sun-icon:hover {
+    fill: #34b1a7;
 }
 
 /*=========*/
@@ -657,6 +701,108 @@ footer {
     background-color: #F9AF02;
     transition: 0.2s;
 }
+
+/*=========*/
+
+/*Темный режим */
+
+.dark {
+    background: #383b40;
+    opacity: 65%;
+    color: #fafafa;
+}
+
+.dark header {
+    box-shadow: 0 1px 5px 0 #2d2f34;
+}
+
+.dark .search-input {
+    background: #1f2023;
+}
+
+.dark .translations-wrap {
+    border: 1px solid #010101;
+}
+
+.dark .translations-header {
+    background: #1f2023;
+    border-bottom: 1px solid #010101;
+}
+
+.dark .translations-items {
+    border-bottom: 1px solid #010101;
+}
+
+.dark .translation-item:hover  {
+    background: #697278;
+}
+.dark .translation-item:hover .translation-link {
+    color:#f0f2f3 ;
+}
+
+.dark .bible-nav {
+    background: #2d2f34;
+    border: none;
+}
+
+.dark .bible-nav .bible-nav-items-wrap {
+    border: 1px solid #010101;
+}
+
+.dark .bible-nav-items-wrap .bible-nav-item {
+    border-right: 1px solid #010101;
+}
+
+.dark .current-book-wrapper .book-abbr {
+    color: #fafafa !important;
+}
+
+.dark .chapter-dropdown-list, .translations-dropdown-list {
+    background: #2d2f34;
+}
+
+.dark .translations-dropdown-list .translation-select-item {
+    border-bottom:  1px solid #010101;
+}
+
+.dark .bible-nav .bible-nav-items-wrap .bible-side {
+    background: #2d2f34;
+}
+
+.dark .bible-nav .bible-side-tab {
+    color: #fafafa;
+}
+
+.dark .bible-nav .bible-side-tab.current {
+    color: silver;
+}
+
+.dark .bible-nav .bible-books-wrap .bible-book{
+    color: #fafafa;
+    border-bottom: 1px solid #010101;
+}
+
+.dark .chapter-dropdown-list .chapter-select-item {
+    border-bottom:  1px solid #010101;
+    color: #fafafa;
+}
+
+.dark .chapter-dropdown-list .chapter-select-item:hover {
+    color: #34b1a7;
+}
+
+.dark .sun-icon {
+    display: block;
+}
+
+.dark .moon-icon {
+    display: none;
+}
+
+.dark footer {
+    background: #2d2f34 ;
+}
+
 
 /*=========*/
 
@@ -694,6 +840,10 @@ footer {
     .bible-book.current {
         border-left: none;
         border-bottom: 2px solid #34b1a7;
+    }
+
+    .moon-icon, .sun-icon {
+        margin: 10px auto 0;
     }
 
 }
