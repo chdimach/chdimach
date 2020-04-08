@@ -72,7 +72,7 @@ function nextback($type){
                             <?=$book_name[0]['name']?>
 						</div>
 						<div class="d-lg-none">
-							<span class="book-abbr">Бт</span>
+							<span class="book-abbr"><?=$book_name[0]['short_name']?></span>
 						</div>
 						<svg class="dropdown-icon" width="16px" height="16px" viewBox="0 0 451.847 451.847">
 							<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
@@ -158,7 +158,7 @@ function nextback($type){
     <div class="container-lg container-fluid mt-4">
             <div class="bible-text">
                 <?php foreach ($content as $value):?>
-                    <div>
+                    <div id = "<?=$value['verse_number'] ?>">
                         <sup><?=$value['verse_number'] ?></sup>
                         <?=$value['verse_content'] ?>
                     </div>

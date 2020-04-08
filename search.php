@@ -101,7 +101,7 @@ $ser= $_POST['search'];
                         <?php foreach ($qer as $value): ?>
                             <div class="search-result-item">
                                     <div class="search-result-head d-flex">
-                                        <a class="d-flex" href="read.php?chapter=<?= $value['book_number'] ?>">
+                                        <a class="d-flex" href="read.php?chapter=<?= $value['number_chapter']?>&number=<?=$value['book_number']?>#<?=$value['verse_number']?>">
                                             <div class="current-book mr-2">
                                                 <?php
                                                 $name_book = get_book_name($value['book_number']);
