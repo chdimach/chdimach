@@ -5,9 +5,10 @@ include ('header.php');
 ?>
 <main>
 	<div class="container">
+        <h1 class="bible-h1">Библия онлайн</h1>
 		<div class="translations-wrap text-center text-sm-left">
 			<div class="translations-header">
-				<h1 class="translations-header-title">Переводы Библии</h1>
+				<h2 class="group-name">Переводы Библии</h2>
 			</div>
 			<nav class="translations-nav">
 				<div class="translations-items d-flex flex-wrap justify-content-center justify-content-sm-start">
@@ -15,11 +16,11 @@ include ('header.php');
                     $translations = get_translations();
                     ?>
                     <?php foreach ($translations as $translation):?>
-                        <h3 class="translation-item ">
+                        <h2 class="translation-item ">
                             <a class="translation-link" href="?translation =<?=$translation['type'] ?>">
                                 <span class="translation-title"><?=$translation['name'] ?></span>
                             </a>
-                        </h3>
+                        </h2>
                     <?php endforeach;  ?>
 				</div>
 			</nav>

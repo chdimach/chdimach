@@ -6,7 +6,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Bible</title>
+    <title>Библия, чтение онлайн, несколько переводов и поиск. Без коментариев и толкования . </title>
+    <meta name="description" content="Читать Библию онлайн, используя разные переводы, это легко и удобно на нашем сайте. ПОИСК и практичный интерфейс
+      помогут в этом достойном, увлекательном деле.  Библия это уникальный бестселлер, контент пришедший через 1000-чи лет.  На сайте отсутствуют комментарии и толкование." />.
+    <meta name="keywords" content="Вы можете читать Библию онлайн используя разные переводы и поиск.">
     <link rel="stylesheet" href="css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,8 +18,8 @@
 <div class="wrapper">
 <header class="mb-4">
     <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div>
-        <div class="search-wrap">
+        <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div
+          <div class="search-wrap">
             <form method="post" action="search.php" class="search-group">
                 <input type="text" name="search" class="search-input" placeholder="Поиск">
                 <button type="submit" class="search-button" name="submit" value="поиск">
