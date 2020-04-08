@@ -18,7 +18,8 @@ $back = $content[0]['number_chapter']-1;
 $next = $content[0]['number_chapter']+1;
 $book_number = $content[0]['book_number'];
 $book_name = get_book_name($content[0]['book_number']);
-$all_chapters_current_book = universal_funtion_content('book_number',$content[0]['book_number']);
+$all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
+
 ?>
 <main>
 	<div class="bible-nav">
@@ -89,8 +90,8 @@ $all_chapters_current_book = universal_funtion_content('book_number',$content[0]
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
 						</svg>
 					<div class="chapter-dropdown-list d-flex flex-column">
-                        <?php foreach ($all_chapters_current_book as $chap): ?>
-							<div class="chapter-select-item"><a class="chapter-number" href="read.php?chapter=<?= $chap['id'] ?>"><span>Глава</span><?=$chap['chapter_number']?></a></div>
+                        <?php foreach ($all_chapters_current_book as $chap):?>
+                            <div class="chapter-select-item"><a class="chapter-number" href="read.php?chapter=<?=$chap['number_chapter'] ?>&number=<?= $chap['book_number']?>"><span>Глава</span><?=$chap['number_chapter']?></a></div>
                         <?php endforeach; ?>
 					</div>
 				</div>
@@ -121,7 +122,6 @@ $all_chapters_current_book = universal_funtion_content('book_number',$content[0]
 			</div>
 		</div>
 	</div>
-
     <div class="container-lg container-fluid mt-4">
             <div class="bible-text">
                 <?php foreach ($content as $value):?>
@@ -129,8 +129,6 @@ $all_chapters_current_book = universal_funtion_content('book_number',$content[0]
                         <sup><?=$value['verse_number'] ?></sup>
                         <?=$value['verse_content'] ?>
                     </div>
-
-
                 <?php endforeach;  ?>
             </div>
     </div>
