@@ -5,19 +5,20 @@ include ('header.php');
 ?>
 <?php
 $cont =$_GET['chapter'];
+$number = $_GET['number'];
 if (current($_GET)==$_GET['chapter']){
-    $content = get_content($cont);
+    $content = get_content($cont,$number);
 }
 else{
     $chap_num =$_GET['number'];
     $num_book =$_GET['number_book'];
     $content = get_next_chapter($num_book,$chap_num);
 }
-$back = $content[0]['chapter_number']-1;
-$next = $content[0]['chapter_number']+1;
-$book_number = $content[0]['number_books'];
-$book_name = get_book_name($content[0]['number_books']);
-$all_chapters_current_book = universal_funtion_content('number_books',$content[0]['number_books']);
+$back = $content[0]['number_chapter']-1;
+$next = $content[0]['number_chapter']+1;
+$book_number = $content[0]['book_number'];
+$book_name = get_book_name($content[0]['book_number']);
+$all_chapters_current_book = universal_funtion_content('book_number',$content[0]['book_number']);
 ?>
 <main>
 <div class="bible-nav">
@@ -44,7 +45,7 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
                         <?=$book_name[0]['name'] ?>
                     </div>
 	            <div class="current-chapter-wrap d-flex align-items-center">
-		            <div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"><?=$content[0]['chapter_number'] ?></span></div>
+		            <div class="current-chapter chapter-select-item"><span>Глава </span><span class="chapter-number"><?=$content[0]['number_chapter'] ?></span></div>
 		            <svg class="dropdown-icon" width="16px" height="16px" viewBox="0 0 451.847 451.847">
 			            <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -130,7 +131,14 @@ $all_chapters_current_book = universal_funtion_content('number_books',$content[0
                 </aside>
             </div>
             <div class="bible-text col-11 col-lg-8">
-                <?=$content[0]['content'] ?>
+                <?php foreach ($content as $value):?>
+                <div>
+                    <sup><?=$value['verse_number'] ?></sup>
+                    <?=$value['verse_content'] ?>
+                </div>
+
+
+                <?php endforeach;  ?>
             </div>
         </div>
     </div>

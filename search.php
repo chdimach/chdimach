@@ -7,6 +7,7 @@ include ('header.php');
 /*$cont =$_GET['chapter'];
 $content = get_content($cont);
 $book_name = get_book_name($content[0]['number_books']);*/
+$ser= $_POST['search'];
 ?>
 
 <main class="mt-4 search-page">
@@ -64,7 +65,7 @@ $book_name = get_book_name($content[0]['number_books']);*/
             <div class="search-wrap col-12 col-lg-8 flex-column">
                 <div class="search-wrap w-100">
                     <form method="post" action="search.php" class="search-group">
-                        <input  type="text" name="search" class="search-input" placeholder="Поиск">
+                        <input value="<?=$ser ?>"  type="text" name="search" class="search-input" placeholder="Поиск">
                         <button type="submit" class="search-button" name="submit" >
                             <svg height="24" fill="#fafafa" viewBox="0 0 515.558 515.558" width="24"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -75,42 +76,48 @@ $book_name = get_book_name($content[0]['number_books']);*/
                 </div>
                 <?php
                 if (isset($_POST['submit'])) {
-                    $link = new mysqli('localhost', 'root', '', 'bible');
+                    $link = new mysqli('localhost', 'root', '', 'mybible');
                     $search = explode(" ", $_POST['search']);
                     $count = count($search);
                     $array = array();
                     $i = 0;
                     foreach ($search as $key) {
                         $i++;
-                        if ($i < $count) $array[] = "content LIKE '%" . $key . "%' OR ";
-                        else $array[] = "content LIKE '%" . $key . "%' ";
+                        if ($i < $count) $array[] = "verse_content LIKE '%" . $key . "%' OR ";
+                        else $array[] = "verse_content LIKE '%" . $key . "%' ";
                     }
-                    $sql = "SELECT * FROM boks_content WHERE " . implode("", $array);
+                    $sql = "SELECT * FROM contents WHERE " . implode("", $array);
                     mysqli_query($link, "SET NAMES 'UTF8'");
                     $result = mysqli_query($link, $sql);
                     $qer = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                    $quantity = count($qer);
+
                 }
                 ?>
                 <div class="search-results mt-4">
                     <div class="search-results-wrap">
-                   <!--<h1>Вы искали: "<?php /*echo $_POST['submit'] ;*/?> "</h1>-->
+
+                   <h1>По запросу: "<?=$ser ;?> " найдено <?=$quantity?> стихов</h1>
                         <?php foreach ($qer as $value): ?>
                             <div class="search-result-item">
                                     <div class="search-result-head d-flex">
-                                        <a class="d-flex" href="read.php?chapter=<?= $value['id'] ?>">
+                                        <a class="d-flex" href="read.php?chapter=<?= $value['book_number'] ?>">
                                             <div class="current-book mr-2">
                                                 <?php
-                                                $name_book = get_book_name($value['number_books']);
+                                                $name_book = get_book_name($value['book_number']);
                                                 echo $name_book[0]['name'];
                                                 ?>
                                             </div>
                                             <div class="current-chapter chapter-select-item">
-                                                <span class="chapter-number">Глава </span> <?= $value['chapter_number'] ?>
+                                                <span class="chapter-number">Глава </span> <?= $value['number_chapter'] ?>:<?= $value['verse_number'] ?>
                                             </div>
                                         </a>
                                     </div>
                                 <div class="search-result-text">
-                                    <?= $value['content'] ?>
+                                    <div>
+                                        <sup><?=$value['verse_number'] ?></sup>
+                                        <?=$value['verse_content'] ?>
+                                    </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>

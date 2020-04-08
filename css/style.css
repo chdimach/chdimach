@@ -513,9 +513,9 @@ header {
     color: gray;
 }
 
-.bible-text div:last-child {
+/*.bible-text div:last-child {
     display: none;
-}
+}*/
 
 footer {
     background: #f2f1ef ;

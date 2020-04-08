@@ -24,8 +24,9 @@ include ('header.php');
                 $number =$_GET['number_book'];
                 $chapters = get_chapters('syn',$number);
                 ?>
-                <?php foreach ($chapters as $chap):?>
-                    <a href="read.php?chapter=<?= $chap['id'] ?>" class="chapter"><span class="chapter-number"><?= $chap['chapter_number'] ?></span></a>
+                <?php foreach ($chapters as $chap):
+                    ?>
+                    <a href="read.php?chapter=<?= $chap['number_chapter'] ?>&number=<?=$_GET['number_book']?>" class="chapter"><span class="chapter-number"><?= $chap['number_chapter'] ?></span></a>
                 <?php endforeach;  ?>
 			</div>
 		</div>

@@ -1,15 +1,15 @@
 <?php
 function get_chapters($translate,$number_book){
     global $link;
-    $sql="SELECT * FROM boks_content WHERE number_books='$number_book';";
+    $sql="SELECT * FROM contents WHERE book_number=".$number_book." GROUP BY number_chapter;";
     $result = mysqli_query($link, $sql);
     $chapters = mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $chapters;
 }
-function get_content($id_content){
+function get_content($chapter,$book_number){
     global $link;
     mysqli_query($link,'set character_set_results ="utf8"');
-    $sql="SELECT * FROM boks_content WHERE id='$id_content';";
+    $sql="SELECT * FROM contents WHERE (number_chapter='$chapter') AND (book_number ='$book_number' );";
     $result = mysqli_query($link, $sql);
     $chapters = mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $chapters;
@@ -57,7 +57,7 @@ function get_next_chapter($number_book,$chapter_number){
 function universal_funtion_content($name,$value){
     global $link;
     mysqli_query($link,'set character_set_results ="utf8"');
-    $sql="SELECT * FROM boks_content WHERE ".$name."='$value'";
+    $sql="SELECT * FROM contents WHERE ".$name."='$value'";
     mysqli_query($link, "SET NAMES 'UTF8'");
     $result = mysqli_query($link, $sql);
     $books = mysqli_fetch_all($result,MYSQLI_ASSOC);
