@@ -83,7 +83,7 @@ $ser= $_POST['search'];
                     $i = 0;
                     foreach ($search as $key) {
                         $i++;
-                        if ($i < $count) $array[] = "verse_content LIKE '%" . $key . "%' OR ";
+                        if ($i < $count) $array[] = "verse_content LIKE '%" . $key . "%' AND ";
                         else $array[] = "verse_content LIKE '%" . $key . "%' ";
                     }
                     $sql = "SELECT * FROM contents WHERE " . implode("", $array);

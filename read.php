@@ -6,19 +6,51 @@ include ('header.php');
 <?php
 $cont =$_GET['chapter'];
 $number = $_GET['number'];
-if (current($_GET)==$_GET['chapter']){
+
     $content = get_content($cont,$number);
-}
-else{
-    $chap_num =$_GET['number'];
-    $num_book =$_GET['number_book'];
-    $content = get_next_chapter($num_book,$chap_num);
-}
+
+
 $back = $content[0]['number_chapter']-1;
 $next = $content[0]['number_chapter']+1;
 $book_number = $content[0]['book_number'];
 $book_name = get_book_name($content[0]['book_number']);
 $all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
+function nextback($type){
+    global $cont;
+    global $number;
+
+    if ($type == 'back'){
+        $chap =$cont;
+        $book = $number;
+        if($chap==1){
+            $book =$book-1;
+            $newbook= get_chapters('syn',$book);
+            $quantity = count($newbook);
+            $quantity = $quantity-1;
+            $newbook[$quantity];
+            $chap= $newbook[$quantity]['number_chapter'];
+        }
+        else{
+            $chap = $chap -1;
+        }
+        return'read.php?number='.$book.'&chapter='.$chap;
+    }
+    elseif ($type == 'next'){
+        $chap =$cont;
+        $book = $number;
+        $newbook= get_chapters('syn',$book);
+        $quantity = count($newbook);
+        $quantity = $quantity-1;
+        if ($chap == $newbook[$quantity]['number_chapter']){
+            $book = $book+1;
+            $chap = 1;
+        }
+        else{
+            $chap = $chap+1;
+        }
+        return'read.php?number='.$book.'&chapter='.$chap;
+    }
+}
 
 ?>
 <main>
@@ -26,7 +58,7 @@ $all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
 		<div class="container">
 			<div class="bible-nav-items-wrap d-flex align-items-center">
 				<div class="d-flex">
-					<a href="read.php?number=<?/*=$back.'&number_book='.$book_number.'&chapter='.$cont*/?> " class="arrow-back">
+					<a href="<?php echo nextback('back');?>" class="arrow-back">
 						<svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
 							<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
@@ -98,7 +130,8 @@ $all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
 
 				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item">
 					<div class="translation-wrap-current d-flex align-items-center justify-content-center" onclick="translationsDropdown()">
-						<div class="current-translation translation-select-item d-none d-lg-block">Синодальный перевод</div> <div class="current-translation translation-abbr translation-select-item d-lg-none">SYN</div>
+						<div class="current-translation translation-select-item d-none d-lg-block">Синодальный перевод</div>
+                        <div class="current-translation translation-abbr translation-select-item d-lg-none">SYN</div>
 						<svg class="dropdown-icon" width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847">
 							<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -111,7 +144,7 @@ $all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
 					</div>
 				</div>
 				<div class="d-flex">
-					<a href="read.php?number=<?/*=$next.'&number_book='.$book_number.'&chapter='.$cont */?>" class="arrow-next">
+					<a href="<?php echo nextback('next'); ?>" class="arrow-next">
 						<svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847">
 							<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
                                 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
