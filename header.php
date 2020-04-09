@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="wrapper">
     <header class="mb-4">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div

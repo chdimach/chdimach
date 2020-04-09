@@ -40,6 +40,16 @@ $('.bible-side-tab-old').on('click', function () {
 });
 
 function colorTheme() {
-    $('body').toggleClass('dark');
+    if (localStorage.getItem('theme') === null) {
+        $('body').toggleClass('dark');
+         localStorage.setItem('theme', 'dark');
+         localStorage.getItem('theme');
+    }else if (localStorage.getItem('theme') === "dark") {
+        $('body').toggleClass('dark');
+        localStorage.removeItem('theme');
+    }
 }
 
+if (localStorage.getItem('theme') === 'dark') {
+    $('body').toggleClass('dark');
+}
