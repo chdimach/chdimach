@@ -788,6 +788,10 @@ footer {
     color: #34b1a7;
 }
 
+.dark .search-result-head .current-book, .dark .search-result-head .current-chapter {
+    color: #fafafa;
+}
+
 .dark .sun-icon {
     display: block;
 }
