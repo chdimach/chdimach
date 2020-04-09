@@ -264,8 +264,9 @@ header {
 .bible-nav-items-wrap {
     border: 1px solid silver;
     max-width: fit-content;
+    width: -moz-max-content;
     margin: 0 auto;
-    border-radius: 25px ;
+    border-radius: 25px;
 }
 
 .bible-nav-item {
@@ -657,7 +658,7 @@ footer {
 }
 
 .moon-icon {
-    margin: 50% 0;
+    margin: 50%;
     fill: #2d2f34;
     transition: all .7s ease;
 }
@@ -667,7 +668,7 @@ footer {
 }
 
 .sun-icon {
-    margin: 50% 0;
+    margin: 50%;
     display: none;
     fill: #fafafa;
     transition: all .7s ease;
