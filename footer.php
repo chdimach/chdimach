@@ -58,7 +58,6 @@ C51.6,145.6,46.8,140.8,41.2,140.8z"/>
         <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"/>
     </svg>
 </a>
-</div>
 <script src="js/libs/jquery-3.4.1.min.js"></script>
 <script src="js/main.js"></script>
 </body>
