@@ -1,16 +1,8 @@
 
 function toggleBibleBooks() {
-    if(window.innerWidth < 992) {
-        $('.bible-side').toggleClass("d-none");
-        $('.current-book-wrapper').toggleClass('visible');
-        $('.bible-side-wrap-toggle').toggleClass('hidden');
-    }else {
-        $('.bible-side').toggleClass("d-lg-block");
-        $('.current-book-wrapper').toggleClass('visible');
-        $('.hide-bible-side-title.visible').toggleClass('d-lg-block');
-        $('.hide-bible-side-title.hidden').toggleClass('d-none');
-        $('.bible-side-wrap-toggle').toggleClass('hidden');
-    }
+    $('.bible-side').toggleClass("d-none");
+    $('.current-book-wrapper').toggleClass('visible');
+
 }
 
 function translationsDropdown() {
@@ -39,17 +31,3 @@ $('.bible-side-tab-old').on('click', function () {
     $('.bible-books-new').addClass('d-none');
 });
 
-function colorTheme() {
-    if (localStorage.getItem('theme') === null) {
-        $('body').toggleClass('dark');
-         localStorage.setItem('theme', 'dark');
-         localStorage.getItem('theme');
-    }else if (localStorage.getItem('theme') === "dark") {
-        $('body').toggleClass('dark');
-        localStorage.removeItem('theme');
-    }
-}
-
-if (localStorage.getItem('theme') === 'dark') {
-    $('body').toggleClass('dark');
-}

@@ -151,7 +151,7 @@ header {
 .translation-item {
     padding: 10px;
     transition: all .3s ease;
-    font-size: 16px;
+    font-size: 18px;
     color: #34b1a7;
 }
 
@@ -535,31 +535,6 @@ header {
 Конец стилей навигации
 */
 
-.bible-side-wrap-toggle {
-    padding: 5px;
-    text-align: center;
-    border: 1px solid silver;
-    cursor: pointer;
-    transition: all .7s ease;
-}
-
-.bible-side-wrap-toggle:hover {
-    color: #34b1a7;
-}
-
-.bible-side-wrap-toggle:hover .double-arrow {
-    fill: #34b1a7;
-}
-
-.double-arrow {
-    transform: rotate(180deg);
-    transition: all 0.3s ease;
-}
-
-.bible-side-wrap-toggle.hidden .double-arrow {
-    transform: rotate(0deg);
-}
-
 .hide-bible-side-title {
     margin-left: 20px;
     font-size: 18px;
@@ -743,6 +718,10 @@ footer {
     border: none;
 }
 
+.dark .dropdown-icon {
+    fill: #fafafa;
+}
+
 .dark .bible-nav .bible-nav-items-wrap {
     border: 1px solid #010101;
 }
@@ -755,7 +734,7 @@ footer {
     color: #fafafa !important;
 }
 
-.dark .chapter-dropdown-list, .dark translations-dropdown-list {
+.dark .chapter-dropdown-list, .dark .translations-dropdown-list {
     background: #2d2f34;
 }
 

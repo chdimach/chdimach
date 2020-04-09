@@ -15,6 +15,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script>
+    function colorTheme() {
+        if (localStorage.getItem('theme') === null) {
+            document.querySelector('body').classList.toggle('dark');
+            localStorage.setItem('theme', 'dark');
+            localStorage.getItem('theme');
+        }else if (localStorage.getItem('theme') === "dark") {
+            document.querySelector('body').classList.toggle('dark');
+            localStorage.removeItem('theme');
+        }
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.querySelector('body').classList.toggle('dark');
+    }
+</script>
     <header class="mb-4">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo"><a href="index.php"><img src="images/logo.png" alt=""></a></div

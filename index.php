@@ -20,7 +20,7 @@ if($_GET===[]){
                     $translations = get_translations();
                     ?>
                     <?php foreach ($translations as $translation):?>
-                        <h2 class="translation-item ">
+                        <h2 class="translation-item">
                             <a class="translation-link" href="<?php echo'?trans='.$translation['type'];?>">
                                 <span class="translation-title"><?=$translation['name'] ?></span>
                             </a>
