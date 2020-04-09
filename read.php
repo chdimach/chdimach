@@ -56,7 +56,7 @@ function nextback($type){
 <main>
 	<div class="bible-nav">
 		<div class="container">
-			<div class="bible-nav-items-wrap d-flex align-items-center">
+			<div class="bible-nav-items-wrap d-flex align-items-center justify-content-center">
 				<div class="d-flex">
 					<a href="<?php echo nextback('back');?>" class="arrow-back">
 						<svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847" style="transform: rotate(180deg)">
@@ -80,39 +80,39 @@ function nextback($type){
                         c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
 						</svg>
 					</div>
-
-				</div>
-				<div class="bible-side d-none">
-					<div class="bible-side-wrap">
-						<div class="bible-side-tabs-wrap d-flex flex-column">
-							<div class="bible-side-tab bible-side-tab-new" onclick="toggleTab(this)">Новый завет</div>
-							<div class="bible-side-tab bible-side-tab-old current" onclick="toggleTab(this)">Ветхий завет</div>
-						</div>
-						<div class="bible-books-new d-none">
-							<div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                <?php
-                                $books = get_books();
-                                $transl='syn';
-                                ?>
-                                <?php foreach ($books as $book):?>
-                                    <?php if($book['book_number']>=40){
-                                        echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>
-                    ';
-                                    }?>
-                                <?php endforeach;  ?>
+					<div class="bible-side d-none">
+						<div class="bible-side-wrap">
+							<div class="bible-side-tabs-wrap d-flex flex-column">
+								<div class="bible-side-tab bible-side-tab-new" onclick="toggleTab(this)">Новый завет</div>
+								<div class="bible-side-tab bible-side-tab-old current" onclick="toggleTab(this)">Ветхий завет</div>
 							</div>
-						</div>
-						<div class="bible-books-old">
-							<div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
-                                <?php foreach ($books as $book):?>
-                                    <?php if($book['book_number']<40){
-                                        echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>';
-                                    }?>
-                                <?php endforeach;  ?>
+							<div class="bible-books-new d-none">
+								<div class="bible-books-wrap mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
+                                    <?php
+                                    $books = get_books();
+                                    $transl='syn';
+                                    ?>
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']>=40){
+                                            echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>
+                    ';
+                                        }?>
+                                    <?php endforeach;  ?>
+								</div>
+							</div>
+							<div class="bible-books-old">
+								<div class="bible-books-wrap bible-books-wrap-old mt-lg-0 mt-2 d-flex justify-content-center flex-lg-column flex-wrap">
+                                    <?php foreach ($books as $book):?>
+                                        <?php if($book['book_number']<40){
+                                            echo '<a href="chapters.php?trans='.$transl.'&number_book='.$book["book_number"].'& name='.$book['name'].'" class="bible-book"><span>'.$book['name'] .'</span></a>';
+                                        }?>
+                                    <?php endforeach;  ?>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 
 				<div class="current-chapter-wrap d-flex align-items-center bible-nav-item" onclick="chapterDropdown()">
 						<div class="current-chapter chapter-select-item d-flex"><span>Глава </span><span class="chapter-number"><?=$content[0]['number_chapter'] ?></span></div>

@@ -324,6 +324,7 @@ header {
     top: 50px;
     max-height: 390px;
     overflow-y: auto;
+    margin-right: -10px;
 }
 
 .bible-nav .bible-side-tab {
@@ -788,6 +789,10 @@ footer {
     color: #34b1a7;
 }
 
+.dark .translations-dropdown-list {
+    background: #212529;
+}
+
 .dark .search-result-head .current-book, .dark .search-result-head .current-chapter {
     color: #fafafa;
 }
@@ -821,7 +826,7 @@ footer {
     }
 
     .bible-side {
-        max-width: 360px;
+        max-width: 265px;
     }
 
     .bible-side-wrap-toggle {
@@ -852,7 +857,7 @@ footer {
 
 @media (max-width: 576px) {
     .bible-side {
-        max-width: 270px ;
+        max-width: 180px ;
     }
 
     .bible-side-wrap-toggle {
