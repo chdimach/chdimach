@@ -2,7 +2,11 @@
 include('function.php');
 include('database.php');
 include ('header.php');
+if($_GET===[]){
+    $_GET['trans']='syn';
+}
 ?>
+
 <main>
 	<div class="container">
         <h1 class="bible-h1">Библия онлайн</h1>
@@ -17,11 +21,11 @@ include ('header.php');
                     ?>
                     <?php foreach ($translations as $translation):?>
                         <h2 class="translation-item ">
-                            <a class="translation-link" href="?translation =<?=$translation['type'] ?>">
+                            <a class="translation-link" href="<?php echo'?trans='.$translation['type'];?>">
                                 <span class="translation-title"><?=$translation['name'] ?></span>
                             </a>
                         </h2>
-                    <?php endforeach;  ?>
+                    <?php endforeach;?>
 				</div>
 			</nav>
 		</div>
@@ -35,7 +39,7 @@ include ('header.php');
 			<div class="books d-flex flex-wrap justify-content-center">
                 <?php
                 $books = get_books();
-                $transl='syn';
+                $transl=$_GET['trans'];
                 ?>
                 <?php foreach ($books as $book):?>
                     <?php if($book['book_number']<40){

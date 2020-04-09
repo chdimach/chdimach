@@ -6,8 +6,9 @@ include ('header.php');
 <?php
 $cont =$_GET['chapter'];
 $number = $_GET['number'];
-
-    $content = get_content($cont,$number);
+$trans = $_GET['trans'];
+$content = get_content($cont,$number,$trans);
+$translations = get_translations();
 
 
 $back = $content[0]['number_chapter']-1;
@@ -18,6 +19,7 @@ $all_chapters_current_book = get_chapters('syn',$content[0]['book_number']);
 function nextback($type){
     global $cont;
     global $number;
+    global $trans;
 
     if ($type == 'back'){
         $chap =$cont;
@@ -33,7 +35,7 @@ function nextback($type){
         else{
             $chap = $chap -1;
         }
-        return'read.php?number='.$book.'&chapter='.$chap;
+        return'read.php?trans='.$trans.'&number='.$book.'&chapter='.$chap;
     }
     elseif ($type == 'next'){
         $chap =$cont;
@@ -48,8 +50,9 @@ function nextback($type){
         else{
             $chap = $chap+1;
         }
-        return'read.php?number='.$book.'&chapter='.$chap;
+        return'read.php?trans='.$trans.'&number='.$book.'&chapter='.$chap;
     }
+
 }
 
 ?>
@@ -130,8 +133,11 @@ function nextback($type){
 
 				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item">
 					<div class="translation-wrap-current d-flex align-items-center justify-content-center" onclick="translationsDropdown()">
-						<div class="current-translation translation-select-item d-none d-lg-block">Синодальный перевод</div>
-                        <div class="current-translation translation-abbr translation-select-item d-lg-none">SYN</div>
+                        <?php
+                         $current_trans = get_translations_name($trans);
+                        ?>
+						<div class="current-translation translation-select-item d-none d-lg-block"><?=$current_trans[0]['name']?></div>
+                        <div class="current-translation translation-abbr translation-select-item d-lg-none"><?=$current_trans[0]['type']?></div>
 						<svg class="dropdown-icon" width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847">
 							<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -139,9 +145,11 @@ function nextback($type){
 						</svg>
 					</div>
 					<div class="translations-dropdown-list d-flex flex-column">
-						<a class="translation-select-item" href="">Новый русский перевод</a>
-						<a class="translation-select-item" href="">Новый русский перевод</a>
-					</div>
+                        <?php foreach ($translations as $translation):?>
+						<a class="translation-select-item" href="read.php?trans=<?=$translation['type']?>&chapter=<?=$cont?>&number=<?=$number?>"><?=$translation['name']?></a>
+                        <?php endforeach; ?>
+
+                    </div>
 				</div>
 				<div class="d-flex">
 					<a href="<?php echo nextback('next'); ?>" class="arrow-next">
