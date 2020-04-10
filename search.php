@@ -27,7 +27,7 @@ $ser= $_POST['search'];
                 </div>
                 <?php
                 if (isset($_POST['submit'])) {
-                    $link = new mysqli('localhost', 'root', '', 'mybible');
+                    $link = new mysqli('vj384588.mysql.tools','vj384588_mybible','9krR^B*0z9','vj384588_mybible');
                     $search = explode(" ", $_POST['search']);
                     $count = count($search);
                     $array = array();

@@ -299,7 +299,7 @@ foreach ($list as $key=>$value){
 ini_set('memory_limit','32M');
 require_once 'phpQuery/phpQuery/phpQuery.php';
 $first_url='https:';
-$url = 'https://allbible.info/';
+$url = 'https://allbible.info/bible/standart/';
 $html = file_get_contents($url);
 $all_chapter_Links = allLinks($html, $first_url);
 function allLinks($html,$first_url){
@@ -318,9 +318,9 @@ function allLinks($html,$first_url){
 
 function allChapter($link, $url){
     $all_list_chapter = [];
-  
 
-    foreach ($link as $key => $href) { 
+
+    foreach ($link as $key => $href) {
 
         $current_link = file_get_contents($href);
         $all_chapter_dom = phpQuery::newDocument($current_link);
@@ -346,112 +346,188 @@ function allContent($link, $url)
 
     $list = [];
     $number_books = 1;
-
     foreach ($link as $cont_value => $value) {
         $cont_value=$cont_value+1;
-
-            if ($cont_value < 30) {
+        if ($cont_value > 0 && $cont_value <11) {
             $number_books =  $cont_value;
 
 
-        }  elseif ($cont_value ==30) {
+
+        }
+        if($cont_value ==31){
+            $value[0] = 'https://allbible.info/bible/standart/ob/1/';
+              foreach ($value as $cont_key => $cont) {
+                $cont_key = $cont_key + 1;
+                $current_link = file_get_contents($cont);
+                $all_chapter_dom = phpQuery::newDocument($current_link);
+                $chapter_current_link = $all_chapter_dom->find('.b_verse');
+                foreach ($chapter_current_link as $verse_key => $verse) {
+                    $book_name = $all_chapter_dom->find('h2.header')->text();
+                    $verse_key = $verse_key+1;
+                    $verse = pq($verse);
+                    $verse_content = $verse->text();
+                    $servername = 'localhost';
+                    $username = 'root';
+                    $password = '';
+                    $dbname = 'mybible';
+                    $mysqli = new mysqli ($servername, $username, $password, $dbname);
+                    $mysqli->query("SET NAMES 'utf8'");
+
+                    $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
+                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','American Standard', 'standart');");
+
+                    $mysqli->close();
+                }
+            }
+        }
+        if($cont_value ==49){
+            $value[0] = 'https://allbible.info/bible/standart/2jo/1/';
+              foreach ($value as $cont_key => $cont) {
+                $cont_key = $cont_key + 1;
+                $current_link = file_get_contents($cont);
+                $all_chapter_dom = phpQuery::newDocument($current_link);
+                $chapter_current_link = $all_chapter_dom->find('.b_verse');
+                foreach ($chapter_current_link as $verse_key => $verse) {
+                    $book_name = $all_chapter_dom->find('h2.header')->text();
+                    $verse_key = $verse_key+1;
+                    $verse = pq($verse);
+                    $verse_content = $verse->text();
+                    $servername = 'localhost';
+                    $username = 'root';
+                    $password = '';
+                    $dbname = 'mybible';
+                    $mysqli = new mysqli ($servername, $username, $password, $dbname);
+                    $mysqli->query("SET NAMES 'utf8'");
+
+                    $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
+                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','American Standard', 'standart');");
+
+                    $mysqli->close();
+                }
+            }
+        }
+        if($cont_value ==50){
+            $value[0] = 'https://allbible.info/bible/standart/3jo/1/';
+              foreach ($value as $cont_key => $cont) {
+                $cont_key = $cont_key + 1;
+                $current_link = file_get_contents($cont);
+                $all_chapter_dom = phpQuery::newDocument($current_link);
+                $chapter_current_link = $all_chapter_dom->find('.b_verse');
+                foreach ($chapter_current_link as $verse_key => $verse) {
+                    $book_name = $all_chapter_dom->find('h2.header')->text();
+                    $verse_key = $verse_key+1;
+                    $verse = pq($verse);
+                    $verse_content = $verse->text();
+                    $servername = 'localhost';
+                    $username = 'root';
+                    $password = '';
+                    $dbname = 'mybible';
+                    $mysqli = new mysqli ($servername, $username, $password, $dbname);
+                    $mysqli->query("SET NAMES 'utf8'");
+
+                    $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
+                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','American Standard', 'standart');");
+
+                    $mysqli->close();
+                }
+            }
+        }
+        if($cont_value ==51){
+            $value[0] = 'https://allbible.info/bible/standart/jude/1/';
+              foreach ($value as $cont_key => $cont) {
+                $cont_key = $cont_key + 1;
+                $current_link = file_get_contents($cont);
+                $all_chapter_dom = phpQuery::newDocument($current_link);
+                $chapter_current_link = $all_chapter_dom->find('.b_verse');
+                foreach ($chapter_current_link as $verse_key => $verse) {
+                    $book_name = $all_chapter_dom->find('h2.header')->text();
+                    $verse_key = $verse_key+1;
+                    $verse = pq($verse);
+                    $verse_content = $verse->text();
+                    $servername = 'localhost';
+                    $username = 'root';
+                    $password = '';
+                    $dbname = 'mybible';
+                    $mysqli = new mysqli ($servername, $username, $password, $dbname);
+                    $mysqli->query("SET NAMES 'utf8'");
+
+                    $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
+                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','American Standard', 'standart');");
+
+                    $mysqli->close();
+                }
+            }
+        }
+        if($cont_value ==64){
+            $value[0] = 'https://allbible.info/bible/standart/phm/1/';
+              foreach ($value as $cont_key => $cont) {
+                $cont_key = $cont_key + 1;
+                $current_link = file_get_contents($cont);
+                $all_chapter_dom = phpQuery::newDocument($current_link);
+                $chapter_current_link = $all_chapter_dom->find('.b_verse');
+                foreach ($chapter_current_link as $verse_key => $verse) {
+                    $book_name = $all_chapter_dom->find('h2.header')->text();
+                    $verse_key = $verse_key+1;
+                    $verse = pq($verse);
+                    $verse_content = $verse->text();
+                    $servername = 'localhost';
+                    $username = 'root';
+                    $password = '';
+                    $dbname = 'mybible';
+                    $mysqli = new mysqli ($servername, $username, $password, $dbname);
+                    $mysqli->query("SET NAMES 'utf8'");
+
+                    $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
+                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','American Standard', 'standart');");
+
+                    $mysqli->close();
+                }
+            }
+        }
+
+         if ($cont_value < 31) {
+            $number_books =  $cont_value;
+
+
+        }  elseif ($cont_value ==31) {
             $number_books =  $cont_value;
             $value[0] = 'https://allbible.info/bible/sinodal/ob/1/';
 
-        } elseif ($cont_value<30&&$cont_value>48){
+
+
+        } elseif ($cont_value<31&&$cont_value>49){
             $number_books =  $cont_value;
 
         }
 
-        elseif ($cont_value == 48 ){
+        elseif ($cont_value == 49 ){
             $number_books = $cont_value;
             $value[0] = 'https://allbible.info/bible/sinodal/2jo/1/';
 
 
-        } elseif ($cont_value == 49) {
-            $number_books = $cont_value;
-            $value[0] = 'https://allbible.info/bible/sinodal/3jo/1/';
 
         } elseif ($cont_value == 50) {
             $number_books = $cont_value;
+            $value[0] = 'https://allbible.info/bible/sinodal/3jo/1/';
+
+
+
+        } elseif ($cont_value == 51) {
+            $number_books = $cont_value;
             $value[0] = 'https://allbible.info/bible/sinodal/jude/1/';
 
-        } elseif ($cont_value > 50 && $cont_value < 63) {
+
+
+        } elseif ($cont_value > 51 && $cont_value < 64) {
             $number_books = $cont_value;
-                foreach ($value as $cont_key => $cont) {
-                    $cont_key = $cont_key + 1;
-                    $current_link = file_get_contents($cont);
-                    $all_chapter_dom = phpQuery::newDocument($current_link);
-                    $chapter_current_link = $all_chapter_dom->find('.b_verse');
-                    foreach ($chapter_current_link as $verse_key => $verse) {
-                        $book_name = $all_chapter_dom->find('h2.header')->text();
-                        $verse_key = $verse_key+1;
-                        $verse = pq($verse);
-                        $verse_content = $verse->text();
-                        $servername = 'localhost';
-                        $username = 'root';
-                        $password = '';
-                        $dbname = 'mybible';
-                        $mysqli = new mysqli ($servername, $username, $password, $dbname);
-                        $mysqli->query("SET NAMES 'utf8'");
 
-                        $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
-                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','Современный перевод', 'mdrn');");
 
-                        $mysqli->close();
-                    }
-                }
-        } elseif ($cont_value == 63) {
+        } elseif ($cont_value == 64) {
             $number_books = $cont_value;
             $value[0] = 'https://allbible.info/bible/sinodal/phm/1/';
-                foreach ($value as $cont_key => $cont) {
-                    $cont_key = $cont_key + 1;
-                    $current_link = file_get_contents($cont);
-                    $all_chapter_dom = phpQuery::newDocument($current_link);
-                    $chapter_current_link = $all_chapter_dom->find('.b_verse');
-                    foreach ($chapter_current_link as $verse_key => $verse) {
-                        $book_name = $all_chapter_dom->find('h2.header')->text();
-                        $verse_key = $verse_key+1;
-                        $verse = pq($verse);
-                        $verse_content = $verse->text();
-                        $servername = 'localhost';
-                        $username = 'root';
-                        $password = '';
-                        $dbname = 'mybible';
-                        $mysqli = new mysqli ($servername, $username, $password, $dbname);
-                        $mysqli->query("SET NAMES 'utf8'");
 
-                        $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
-                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','Современный перевод', 'mdrn');");
-
-                        $mysqli->close();
-                    }
-                }
         } elseif ($cont_value > 63 && $cont_value <=66 ) {
             $number_books = $cont_value;
-                foreach ($value as $cont_key => $cont) {
-                    $cont_key = $cont_key + 1;
-                    $current_link = file_get_contents($cont);
-                    $all_chapter_dom = phpQuery::newDocument($current_link);
-                    $chapter_current_link = $all_chapter_dom->find('.b_verse');
-                    foreach ($chapter_current_link as $verse_key => $verse) {
-                        $book_name = $all_chapter_dom->find('h2.header')->text();
-                        $verse_key = $verse_key+1;
-                        $verse = pq($verse);
-                        $verse_content = $verse->text();
-                        $servername = 'localhost';
-                        $username = 'root';
-                        $password = '';
-                        $dbname = 'mybible';
-                        $mysqli = new mysqli ($servername, $username, $password, $dbname);
-                        $mysqli->query("SET NAMES 'utf8'");
-
-                        $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
-                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','Современный перевод', 'mdrn');");
-
-                        $mysqli->close();
-                    }
-                }
 
         }
         $number = 0;

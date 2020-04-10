@@ -15,6 +15,7 @@ include ('header.php');
 		</a>
         <?php
         $name =$_GET['name'];
+        $trans =$_GET['trans'];
         ?>
         <h3 class="chapter-name"><?=$name ?></h3>
 		<h6 class="chapters-title">Главы</h6>
@@ -22,7 +23,7 @@ include ('header.php');
 			<div class="chapters d-flex flex-wrap">
                 <?php
                 $number =$_GET['number_book'];
-                $chapters = get_chapters('syn',$number);
+                $chapters = get_chapters($trans,$number);
                 ?>
                 <?php foreach ($chapters as $chap):?>
                     <a href="read.php?trans=<?=$_GET['trans']?>&chapter=<?= $chap['number_chapter'] ?>&number=<?=$_GET['number_book']?>" class="chapter"><span class="chapter-number"><?= $chap['number_chapter'] ?></span></a>
