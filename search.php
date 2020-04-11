@@ -55,15 +55,16 @@ $ser= $_POST['search'];
                                                 <?=$value['translete_name'].' ';
                                                 ?>
                                             </div>
-                                            <div class="current-book mr-2">
-                                                <?php
-                                                $name_book = get_book_name($value['book_number']);
-                                                echo $name_book[0]['name'];
-                                                ?>
-                                            </div>
-                                            <div class="current-chapter chapter-select-item">
-                                                <span class="chapter-number">Глава </span> <?= $value['number_chapter'] ?>:<?= $value['verse_number'] ?>
-                                            </div>
+		                                        <div class="current-book mr-2">
+                                                    <?php
+                                                    $name_book = get_book_name($value['book_number']);
+                                                    echo $name_book[0]['name'];
+                                                    ?>
+		                                        </div>
+		                                        <div class="current-chapter chapter-select-item">
+			                                        <span class="chapter-number">Глава </span> <?= $value['number_chapter'] ?>:<?= $value['verse_number'] ?>
+		                                        </div>
+
                                         </a>
                                     </div>
                                 <div class="search-result-text">
