@@ -62,13 +62,13 @@ C51.6,145.6,46.8,140.8,41.2,140.8z"/>
 <script src="js/main.js"></script>
 <script src="js/libs/mark.min.js"></script>
 <script>
-    let markInstance = new Mark(document.querySelector(".search-results-wrap"));
-    let searchInput = document.querySelectorAll("input[name='search']")[1].value;
-    markInstance.unmark({
-        done: function(){
-            markInstance.mark(searchInput);
-        }
-    });
+        let markInstance = new Mark(document.querySelector(".search-results-wrap"));
+        let searchInput = document.querySelectorAll("input[name='search']")[1].value;
+        markInstance.unmark({
+            done: function(){
+                markInstance.mark(searchInput);
+            }
+        });
 </script>
 </body>
 </html>

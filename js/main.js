@@ -23,11 +23,11 @@ function toggleTab(e) {
 
 $('.bible-side-tab-new').on('click', function () {
     $('.bible-books-new').removeClass('d-none');
-    $('.bible-books-old').addClass('d-none');
+    $('.bible-books-old').toggleClass('d-none');
 });
 
 $('.bible-side-tab-old').on('click', function () {
     $('.bible-books-old').removeClass('d-none');
-    $('.bible-books-new').addClass('d-none');
+    $('.bible-books-new').toggleClass('d-none');
 });
 
