@@ -121,6 +121,11 @@ header {
     overflow: hidden;
 }
 
+mark {
+    background: #abdde5;
+    padding: 0;
+}
+
 /*=========*/
 
 /*Стили для блока переводов*/
