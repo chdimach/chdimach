@@ -126,7 +126,7 @@ function nextback($type){
 						</svg>
 					<div class="chapter-dropdown-list d-flex flex-column">
                         <?php foreach ($all_chapters_current_book as $chap):?>
-                            <div class="chapter-select-item"><a class="chapter-number" href="read.php?chapter=<?=$chap['number_chapter'] ?>&number=<?= $chap['book_number']?>"><span>Глава</span><?=$chap['number_chapter']?></a></div>
+                            <div class="chapter-select-item"><a class="chapter-number" href="read.php?trans=<?=$trans?>&chapter=<?=$chap['number_chapter'] ?>&number=<?= $chap['book_number']?>"><span>Глава</span><?=$chap['number_chapter']?></a></div>
                         <?php endforeach; ?>
 					</div>
 				</div>
