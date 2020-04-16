@@ -389,23 +389,6 @@ function allContent($link, $url)
         }
         if($cont_value ==51){
             $value[0] = 'https://allbible.info/bible/modern/jude/1/';
-            foreach ($chapter_current_link as $verse_key => $verse) {
-                $book_name = $all_chapter_dom->find('h2.header')->text();
-                $verse_key = $verse_key+1;
-                $verse = pq($verse);
-                $verse_content = $verse->text();
-                $servername = 'localhost';
-                $username = 'root';
-                $password = '';
-                $dbname = 'mybible';
-                $mysqli = new mysqli ($servername, $username, $password, $dbname);
-                $mysqli->query("SET NAMES 'utf8'");
-
-                $sql = $mysqli->query("INSERT INTO `contents` ( `verse_number`, `verse_content`, `number_chapter`, `book_number`,`book_name`, `translete_name`,`translete_type`)
-                                                              VALUES ('$verse_key', '$verse_content', '$cont_key', '$cont_value','$book_name','Современный перевод', 'mdrn');");
-
-                $mysqli->close();
-            }
 
         }
         if($cont_value ==64){

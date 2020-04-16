@@ -132,14 +132,14 @@ function nextback($type){
 					</div>
 				</div>
 
-
+                </div>
 				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item">
 					<div class="translation-wrap-current d-flex align-items-center justify-content-center" onclick="translationsDropdown()">
                         <?php
                          $current_trans = get_translations_name($trans);
                         ?>
 						<div class="current-translation translation-select-item d-none d-lg-block"><?=$current_trans[0]['name']?></div>
-                        <div class="current-translation translation-abbr translation-select-item d-lg-none"><?=$current_trans[0]['type']?></div>
+                        <div class="current-translation translation-abbr small translation-select-item d-lg-none">Переводы</div>
 						<svg class="dropdown-icon" width="16px" height="16px" x="0px" y="0px" viewBox="0 0 451.847 451.847">
 							<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
                         c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
@@ -150,10 +150,10 @@ function nextback($type){
                         <?php foreach ($translations as $translation):?>
 						<a class="translation-select-item" href="read.php?trans=<?=$translation['type']?>&chapter=<?=$cont?>&number=<?=$number?>"><?=$translation['name']?></a>
                         <?php endforeach; ?>
-
                     </div>
-				</div>
-				<div class="d-flex">
+                </div>
+
+            <div class="d-flex">
 					<a href="<?php echo nextback('next'); ?>" class="arrow-next">
 						<svg fill="#fafafa" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 451.846 451.847">
 							<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
@@ -165,6 +165,7 @@ function nextback($type){
 			</div>
 		</div>
 	</div>
+
     <div class="container-lg container-fluid mt-4">
             <div class="bible-text">
                 <?php foreach ($content as $value):?>
