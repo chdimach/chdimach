@@ -74,8 +74,7 @@ function nextback($type){
 						<div class="d-none d-lg-block">
                             <?=$book_name[0]['name']?>
 						</div>
-						<div class="d-md-none">Книги</div>
-						<div class="d-none d-md-block d-lg-none">
+						<div class="d-lg-none">
 							<span class="book-abbr"><?=$book_name[0]['short_name']?></span>
 						</div>
 						<svg class="dropdown-icon" width="16px" height="16px" viewBox="0 0 451.847 451.847">
@@ -116,8 +115,6 @@ function nextback($type){
 						</div>
 					</div>
 				</div>
-
-				<div class="d-none d-md-block">
 					<div class="current-chapter-wrap d-flex align-items-center bible-nav-item" onclick="chapterDropdown()">
 						<div class="current-chapter chapter-select-item d-flex"><span>Глава </span><span class="chapter-number"><?=$content[0]['number_chapter'] ?></span></div>
 						<svg class="dropdown-icon" width="16px" height="16px" viewBox="0 0 451.847 451.847">
@@ -131,8 +128,6 @@ function nextback($type){
                         <?php endforeach; ?>
 					</div>
 				</div>
-
-                </div>
 				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item">
 					<div class="translation-wrap-current d-flex align-items-center justify-content-center" onclick="translationsDropdown()">
                         <?php

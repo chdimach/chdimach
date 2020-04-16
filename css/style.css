@@ -608,10 +608,6 @@ mark {
     color: gray;
 }
 
-/*.bible-text div:last-child {
-    display: none;
-}*/
-
 /*Футер*/
 
 footer {
@@ -818,23 +814,6 @@ footer {
         display: block;
     }
 
-    /*.bible-side {*/
-    /*    max-width: 265px;*/
-    /*}*/
-
-
-    /*.bible-book {*/
-    /*    padding: 22px;*/
-    /*    background: rgba(56,205,195,0.11);*/
-    /*    margin: 0 5px 10px 0;*/
-    /*    color: #34b1a7;*/
-    /*}*/
-
-    /*.bible-book.current {*/
-    /*    border-left: none;*/
-    /*    border-bottom: 2px solid #34b1a7;*/
-    /*}*/
-
     .moon-icon, .sun-icon {
         margin: 10px auto 0;
     }
@@ -843,21 +822,13 @@ footer {
 
 
 @media (max-width: 576px) {
-    /*.bible-side {*/
-    /*    max-width: 180px ;*/
-    /*}*/
+    .chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .bible-nav .chapter-number  {
+        font-size: 11px;
+    }
 
-    /*.bible-side-wrap-toggle {*/
-    /*    left: 1%;*/
-    /*}*/
-
-    /*.chapter-select-wrap .current-book, .current-chapter-wrap .current-chapter, .chapter-dropdown-list > .chapter-select-item, .bible-nav .chapter-number  {*/
-    /*    font-size: 11px;*/
-    /*}*/
-
-    /*.bible-nav-items-wrap .bible-side-tab, .bible-book, .current-book-wrapper, .current-chapter-wrap, .translation-select-wrap  {*/
-    /*    font-size: 11px !important;*/
-    /*}*/
+    .bible-nav-items-wrap .bible-side-tab, .bible-book, .current-book-wrapper, .current-chapter-wrap, .translation-select-wrap  {
+        font-size: 11px !important;
+    }
 
     .bible-nav-items-wrap .book-abbr {
         font-size: 11px !important;
@@ -867,14 +838,14 @@ footer {
         right: 50px;
     }
 
-    /*.bible-nav-items-wrap .dropdown-icon {*/
-    /*    height: 12px;*/
-    /*    width: 12px;*/
-    /*}*/
+    .bible-nav-items-wrap .dropdown-icon {
+        height: 12px;
+        width: 12px;
+    }
 
-    /*.bible-nav-item {*/
-    /*    padding: 9px 10px;*/
-    /*}*/
+    .bible-nav-item {
+        padding: 9px 10px;
+    }
 
     .search-results h1 {
         font-size: 26px;
