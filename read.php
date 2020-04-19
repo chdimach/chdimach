@@ -69,8 +69,8 @@ function nextback($type){
 						</svg>
 					</a>
 				</div>
-				<div class="current-book-wrapper bible-nav-item d-flex align-items-center" onclick="toggleBibleBooks(this)">
-					<div class="current-book d-flex align-items-center" >
+				<div class="current-book-wrapper bible-nav-item d-flex align-items-center" >
+					<div class="current-book d-flex align-items-center" onclick="toggleBibleBooks()" >
 						<div class="d-none d-lg-block">
                             <?=$book_name[0]['name']?>
 						</div>
