@@ -276,11 +276,10 @@ mark {
 
 .bible-nav-item {
     border-right: 1px solid silver;
+    padding: 0 10px;
+    cursor: pointer;
 }
 
-.bible-nav-item {
-    padding: 0 10px;
-}
 
 .chapter-select-wrap .current-book {
     transition: all .3s ease;
@@ -451,11 +450,11 @@ mark {
     transition: all .3s ease;
 }
 
-.translation-wrap-current:hover .current-translation {
+.translation-select-wrap:hover .current-translation {
     color: #34b1a7;
 }
 
-.translation-wrap-current:hover .dropdown-icon {
+.translation-select-wrap:hover .dropdown-icon {
     fill: #34b1a7;
 }
 

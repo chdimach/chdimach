@@ -69,8 +69,8 @@ function nextback($type){
 						</svg>
 					</a>
 				</div>
-				<div class="current-book-wrapper bible-nav-item d-flex align-items-center">
-					<div class="current-book d-flex align-items-center" onclick="toggleBibleBooks()">
+				<div class="current-book-wrapper bible-nav-item d-flex align-items-center" onclick="toggleBibleBooks(this)">
+					<div class="current-book d-flex align-items-center" >
 						<div class="d-none d-lg-block">
                             <?=$book_name[0]['name']?>
 						</div>
@@ -128,8 +128,8 @@ function nextback($type){
                         <?php endforeach; ?>
 					</div>
 				</div>
-				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item">
-					<div class="translation-wrap-current d-flex align-items-center justify-content-center" onclick="translationsDropdown()">
+				<div class="translation-select-wrap d-flex flex-column align-items-center justify-content-center bible-nav-item" onclick="translationsDropdown()">
+					<div class="translation-wrap-current d-flex align-items-center justify-content-center">
                         <?php
                          $current_trans = get_translations_name($trans);
                         ?>
