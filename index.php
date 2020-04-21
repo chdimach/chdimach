@@ -20,11 +20,23 @@ if($_GET===[]){
                     $translations = get_translations();
                     ?>
                     <?php foreach ($translations as $translation):?>
-                        <h2 class="translation-item">
-                            <a class="translation-link" href="<?php echo'?trans='.$translation['type'];?>">
-                                <span class="translation-title"><?=$translation['name'] ?></span>
+                    <?php
+                    $transl_type = $_GET['trans'];
+                        if ($translation['type'] == $transl_type ){
+                            echo '  <h2 class="translation-item selected">
+                            <a class="translation-link" href="?trans='.$translation['type'].'">
+                                <span class="translation-title">'.$translation['name'].'</span>
                             </a>
-                        </h2>
+                        </h2>';
+                        }
+                        else{
+                            echo '  <h2 class="translation-item ">
+                            <a class="translation-link" href="?trans='.$translation['type'].'">
+                                <span class="translation-title">'.$translation['name'].'</span>
+                            </a>
+                        </h2>';
+                        }
+                        ?>
                     <?php endforeach;?>
 				</div>
 			</nav>
